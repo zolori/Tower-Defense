@@ -38,14 +38,14 @@ public class Turret : MonoBehaviour
     void UpdateTargetPos()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);  // stocke les tags des cibles
-        GameObject nearestEnemy = null;    // ennemi qui sera ciblé
-        float shortestDistance = Mathf.Infinity;    // initialise la distance la plu courte à "infini"
+        GameObject nearestEnemy = null;    // ennemi qui sera ciblÃ©
+        float shortestDistance = Mathf.Infinity;    // initialise la distance la plu courte Ã  "infini"
 
         foreach(GameObject enemy in enemies)   // boucle sur toutes les cibles
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);    // calcule la distance entre la tourelle et la cible
 
-            if (distanceToEnemy < shortestDistance) // si la nouvelle distance calculée est plus courte
+            if (distanceToEnemy < shortestDistance) // si la nouvelle distance calculÃ©e est plus courte
                 shortestDistance = distanceToEnemy; // on remplace la distance la plus courte par la nouvelle valeur
                 nearestEnemy = enemy; // on initialise 
         }

@@ -4,28 +4,40 @@ using UnityEngine;
 
 public class bulletBehaviour : MonoBehaviour
 {
-    public float bulletSpeed = 100f;
+    public float bulletSpeed = 500f;
     internal Transform Target;
+    private Rigidbody rigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
-    {   
-        transform.LookAt(Target.position);
-        transform.position += transform.forward * Time.deltaTime * bulletSpeed;        
+    {
+        if (Target != null)
+        {
+            transform.LookAt(Target.position);
+        }
+        //transform.position += transform.forward * Time.deltaTime * bulletSpeed;
+        rigidbody.velocity = transform.forward * bulletSpeed;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.name != "Turret")
         {
-            Debug.Log("Hit");
+            Enemy enemy = other.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                Debug.Log("Hit");
+                enemy.Damaged(5);   
+            }
             Destroy(gameObject);
         }
+        
+        
     }
 }
