@@ -9,7 +9,7 @@ public class Turret : MonoBehaviour
     public float range = 15f;
     public string tag = "Enemy";
     public Transform partToRotate;
-    public float turnSpeed = 1f;
+    public float turnSpeed = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,6 @@ public class Turret : MonoBehaviour
     {
         if (target == null) // si pas de cible
             return; // on quitte
-        System.Console.Write("oui");
         Vector3 direction = target.position - transform.position; // calcule la direction
         Quaternion lookRotation = Quaternion.LookRotation(direction); // calcule la rotation
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
