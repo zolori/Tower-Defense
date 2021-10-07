@@ -22,6 +22,10 @@ public class bulletBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Hit");
+            Destroy(gameObject);
+        }
     }
 }
