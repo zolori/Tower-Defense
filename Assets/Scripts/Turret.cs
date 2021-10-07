@@ -11,6 +11,11 @@ public class Turret : MonoBehaviour
     public Transform partToRotate;
     public float turnSpeed = 10f;
 
+    public GameObject bulletPrefab;
+    public Transform bulletOrigin;
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +31,7 @@ public class Turret : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(direction); // calcule la rotation
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        
 
     }
 
@@ -47,6 +53,20 @@ public class Turret : MonoBehaviour
         if(nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
+            fireBullet();
+            
+            
         }
+    }
+
+    void fireBullet()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, bulletOrigin.position, bulletPrefab.transform.rotation);
+
+        bullet.GetComponent<bulletBehaviour>().Target = target;
+
+
+
+
     }
 }
