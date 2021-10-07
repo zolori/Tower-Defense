@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6751314369180605812}
   - component: {fileID: 4582305483125368566}
   - component: {fileID: 5455670511391481616}
-  - component: {fileID: 171647571}
+  - component: {fileID: 4633178997634542288}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -120,7 +120,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &171647571
+--- !u!114 &4633178997634542288
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
