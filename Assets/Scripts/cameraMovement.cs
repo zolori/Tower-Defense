@@ -18,15 +18,22 @@ public class cameraMovement : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
-        if (transform.position.x >= -5 && transform.position.z <= -20 && horizontalInput <= 0 && verticalInput >= 0)
-        {
-            transform.position += new Vector3(horizontalInput, 0, verticalInput) * moveSpeed * Time.deltaTime;
-        }
-        if (transform.position.x <= 5 && transform.position.z >= -50 && horizontalInput >= 0 && verticalInput <= 0) 
-        { 
-            transform.position += new Vector3(horizontalInput, 0, verticalInput) * moveSpeed * Time.deltaTime;
-        } 
-        
 
+        if (Input.GetKey(KeyCode.D) && transform.position.x <= 5)
+        {
+            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.Q) && transform.position.x >= -5)
+        {
+            transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.S) && transform.position.z >= -50)
+        {
+            transform.position += Vector3.back * moveSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.Z) && transform.position.z <= -20)
+        {
+            transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
+        }
     }
 }
