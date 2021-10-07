@@ -56,6 +56,7 @@
     <Compile Include="Assets\Scripts\cameraMovement.cs" />
     <Compile Include="Assets\Scripts\spawner.cs" />
     <Compile Include="Assets\Scripts\GoToGoal.cs" />
+    <Compile Include="Assets\Scripts\Turret.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
