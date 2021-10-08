@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7708417809096062156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.514}
+  m_LocalPosition: {x: 0, y: 0, z: 0.558}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7708417810339672419}
@@ -167,3 +167,5 @@ MonoBehaviour:
   tag: Enemy
   partToRotate: {fileID: 7708417810339672419}
   turnSpeed: 10
+  bulletPrefab: {fileID: 5243041176559824100, guid: fcc94680d933adf4a89d42a834aa2b24, type: 3}
+  bulletOrigin: {fileID: 7708417809096062157}

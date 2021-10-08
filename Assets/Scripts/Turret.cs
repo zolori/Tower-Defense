@@ -64,9 +64,5 @@ public class Turret : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, bulletOrigin.position, bulletPrefab.transform.rotation);
 
         bullet.GetComponent<bulletBehaviour>().Target = target;
-
-
-
-
     }
 }
