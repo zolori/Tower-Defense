@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class spawner : MonoBehaviour
 {
+    public GameObject enemy;
+    Transform transform;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform = GetComponent<Transform>();
+        Instantiate(enemy, transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame
