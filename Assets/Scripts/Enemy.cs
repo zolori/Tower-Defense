@@ -6,18 +6,17 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform objective;
+    public GameObject _end;
 
     public int lifePoint = 20;
     public int maxLifePoint = 20;
     public HealthBar sliderHealthBar;
-    public bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
     {
         NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.destination = objective.position;
+        navMeshAgent.destination = _end.transform.position;
         sliderHealthBar.SetMaxHealth(maxLifePoint);
     }
 
@@ -32,14 +31,15 @@ public class Enemy : MonoBehaviour
         lifePoint -= prmDamage;
         sliderHealthBar.SetHealth(lifePoint);
         if(lifePoint <= 0)
-        {
+        {   
+            EndBehaviour.AddMoney();
             Die();
         }
     }
 
-    void Die()
+    public void Die()
     {
-        isDead = true;
+        
         Destroy(gameObject);
     }
 }

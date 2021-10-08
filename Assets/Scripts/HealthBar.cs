@@ -23,13 +23,10 @@ public class HealthBar : MonoBehaviour
 
     private void Update()
     {
-
-        Vector3 direction =  transform.position- camera.transform.position; // calcule la direction
+        Vector3 direction = transform.position - camera.transform.position; // calcule la direction
         Quaternion lookRotation = Quaternion.LookRotation(direction); // calcule la rotation
         Vector3 rotation = Quaternion.Lerp(slider.transform.rotation, lookRotation, Time.deltaTime * 50).eulerAngles;
         slider.transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-
     }
 
     public void SetMaxHealth(int prmMaxHealth)
