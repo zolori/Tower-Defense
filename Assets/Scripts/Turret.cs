@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class Turret : MonoBehaviour
 {
-    public Transform target;
-    public float range = 15f;
+    public Enemy target;
+    public float range = 50f;
     public string tag = "Enemy";
     public Transform partToRotate;
     public float turnSpeed = 10f;
@@ -27,7 +27,9 @@ public class Turret : MonoBehaviour
     {
         if (target == null) // si pas de cible
             return; // on quitte
-        Vector3 direction = target.position - transform.position; // calcule la direction
+
+
+        Vector3 direction = target.transform.position - transform.position; // calcule la direction
         Quaternion lookRotation = Quaternion.LookRotation(direction); // calcule la rotation
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
@@ -37,36 +39,30 @@ public class Turret : MonoBehaviour
 
     void UpdateTargetPos()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);  // stocke les tags des cibles
-        GameObject nearestEnemy = null;    // ennemi qui sera ciblé
-        float shortestDistance = Mathf.Infinity;    // initialise la distance la plu courte à "infini"
+        //GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);  // stocke les tags des cibles
+        //GameObject nearestEnemy = null;    // ennemi qui sera ciblé
+        //float shortestDistance = Mathf.Infinity;    // initialise la distance la plu courte à "infini"
 
-        foreach(GameObject enemy in enemies)   // boucle sur toutes les cibles
-        {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);    // calcule la distance entre la tourelle et la cible
+        //foreach(GameObject enemy in enemies)   // boucle sur toutes les cibles
+        //{
+        //    float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);    // calcule la distance entre la tourelle et la cible
 
-            if (distanceToEnemy < shortestDistance) // si la nouvelle distance calculée est plus courte
-                shortestDistance = distanceToEnemy; // on remplace la distance la plus courte par la nouvelle valeur
-                nearestEnemy = enemy; // on initialise 
-        }
+        //    if (distanceToEnemy < shortestDistance) // si la nouvelle distance calculée est plus courte
+        //        shortestDistance = distanceToEnemy; // on remplace la distance la plus courte par la nouvelle valeur
+        //        nearestEnemy = enemy; // on initialise 
+        //}
 
-        if(nearestEnemy != null && shortestDistance <= range)
-        {
-            target = nearestEnemy.transform;
-            fireBullet();
+        //if(nearestEnemy != null && shortestDistance <= range)
+        //{
+        //    target = nearestEnemy.transform;
+        //    fireBullet();
             
-            
-        }
+        //}
     }
 
-    void fireBullet()
+    public void fireBullet()
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletOrigin.position, bulletPrefab.transform.rotation);
-
         bullet.GetComponent<bulletBehaviour>().Target = target;
-
-
-
-
     }
 }

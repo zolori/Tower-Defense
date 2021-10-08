@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour
 
     public int lifePoint = 20;
     public int maxLifePoint = 20;
-    public HealthBar sliderHealthBar; 
+    public HealthBar sliderHealthBar;
+    public bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        isDead = true;
         Destroy(gameObject);
     }
 }

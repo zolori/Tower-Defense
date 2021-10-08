@@ -5,7 +5,7 @@ using UnityEngine;
 public class bulletBehaviour : MonoBehaviour
 {
     public float bulletSpeed = 500f;
-    internal Transform Target;
+    internal Enemy Target;
     private Rigidbody rigidbody;
 
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class bulletBehaviour : MonoBehaviour
     {
         if (Target != null)
         {
-            transform.LookAt(Target.position);
+            transform.LookAt(Target.transform.position);
         }
         //transform.position += transform.forward * Time.deltaTime * bulletSpeed;
         rigidbody.velocity = transform.forward * bulletSpeed;
@@ -27,7 +27,7 @@ public class bulletBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name != "Turret")
+        if (other.gameObject.name != "Turret" && other.gameObject.name != "Sphere")
         {
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
             if (enemy != null)
