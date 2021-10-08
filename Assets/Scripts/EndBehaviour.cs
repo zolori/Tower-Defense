@@ -7,7 +7,7 @@ public class EndBehaviour : MonoBehaviour
 {
     public static int playerLife = 10;
     public static int playerMaxLife = 10;
-    public static int playerMoney = 90;
+    public static int playerMoney = 90000;
     public static int mobDrop = 10;
     public static int turretBuy = 50;
     public static int turretUpgrade = 100;

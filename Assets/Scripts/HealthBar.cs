@@ -13,7 +13,7 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
     public Gradient gradient;
     public Image fill;
-    public Camera camera;
+    
     
 
     private void Start()
@@ -23,7 +23,7 @@ public class HealthBar : MonoBehaviour
 
     private void Update()
     {
-        Vector3 direction = transform.position - camera.transform.position; // calcule la direction
+        Vector3 direction = transform.position - Camera.main.transform.position; // calcule la direction
         Quaternion lookRotation = Quaternion.LookRotation(direction); // calcule la rotation
         Vector3 rotation = Quaternion.Lerp(slider.transform.rotation, lookRotation, Time.deltaTime * 50).eulerAngles;
         slider.transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
