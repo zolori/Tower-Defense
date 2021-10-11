@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndBehaviour : MonoBehaviour
 {
@@ -11,7 +13,19 @@ public class EndBehaviour : MonoBehaviour
     public static int mobDrop = 10;
     public static int turretBuy = 50;
     public static int turretUpgrade = 100;
-    
+    public TMP_Text moneyText;
+    public TMP_Text waveText;
+    public spawner spawner;
+
+    private void Start()
+    {
+        UpdateText();
+    }
+
+    void Update()
+    {
+        UpdateText();
+    }
 
     public static void AddMoney()
     {
@@ -62,5 +76,12 @@ public class EndBehaviour : MonoBehaviour
             }
             
         }
+    }
+
+    public void UpdateText()
+    {
+        
+        moneyText.SetText("Money : " + playerMoney);
+        waveText.SetText("Wave : " + spawner.GetWave());
     }
 }

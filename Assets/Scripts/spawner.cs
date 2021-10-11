@@ -6,35 +6,53 @@ using UnityEngine;
 public class spawner : MonoBehaviour
 {
     public GameObject enemy;
-    Transform transform;
-    private Boolean ready = false;
+    Transform _transform;
+    private Boolean _ready;
+    private int _maxWaveCount = 10;
+    private int _wave = 0;
+
+    private int _enemyFirstSpawnCount = 3;
+    
 
     void Start()
     {
-        transform = GetComponent<Transform>();
-        Instantiate(enemy, transform.position, Quaternion.identity);
+        _transform = GetComponent<Transform>();
+        
     }
 
     private void Update()
     {
-        InvokeRepeating(nameof(Spawn), 0f, 1);
+        //InvokeRepeating(nameof(Spawn), 0f, 1);
     }
-
-    void Spawn()
-    {
-        if (ready && GameObject.FindGameObjectsWithTag("Enemy").Length < 20)
-        {
-            Instantiate(enemy, transform.position + new Vector3(-2,0,0), Quaternion.identity);
-        }
-        else
-        {
-            CancelInvoke();
-            ready = false;
-        }
-    }
-
     public void IsReady()
     {
-        ready = true;
+        _ready = true;
+        //nbClick++;
+        SummonWaves();
+    }
+
+    
+    private void Spawn()
+    {
+        Instantiate(enemy, _transform.position + new Vector3(-2, 0, 0), Quaternion.identity);
+    }
+
+    public void SummonWaves()
+    {
+        if (_ready && _wave <= _maxWaveCount)
+        {
+            for (int i = 0; i < _enemyFirstSpawnCount; i++)
+            {
+                Spawn();
+            }
+
+            _wave++;
+            _enemyFirstSpawnCount += 3;
+        }
+    }
+
+    public int GetWave()
+    {
+        return _wave;
     }
 }
