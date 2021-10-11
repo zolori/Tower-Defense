@@ -19,7 +19,7 @@ public class Turret : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateTargetPos", 0f, 0.5f);
+        //InvokeRepeating("UpdateTargetPos", 0f, 0.5f);
     }
 
     // Update is called once per frame
@@ -28,13 +28,10 @@ public class Turret : MonoBehaviour
         if (target == null) // si pas de cible
             return; // on quitte
 
-
         Vector3 direction = target.transform.position - transform.position; // calcule la direction
         Quaternion lookRotation = Quaternion.LookRotation(direction); // calcule la rotation
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-        
-
     }
 
     void UpdateTargetPos()
