@@ -29,22 +29,33 @@ public class trigger : MonoBehaviour
         if (other.tag == "Enemy")
         {
             enemiesEntered.Add(other.GetComponent<Enemy>());
-            areaTarget = enemiesEntered[enemiesEntered.Count - 1];
-            InvokeRepeating("shoot", 0f, 0.5f);
+            if (enemiesEntered.Count == 1)
+            {
+                areaTarget = enemiesEntered[enemiesEntered.Count - 1];
+                InvokeRepeating("shoot", 0f, 0.5f);
+            }
         }
     }
 
     private void shoot()
     {
+        Debug.Log("shoot : " + enemiesEntered.Count);
+
         if (enemiesEntered.Count != 0)
         {
-            turret.target = areaTarget.gameObject.GetComponent<Enemy>();
-            turret.fireBullet();
+            if (areaTarget != null)
+            {
+                turret.target = areaTarget.gameObject.GetComponent<Enemy>();
+                turret.fireBullet();
+            }
+            else
+                turret.destroyBullet();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("Yolo : " + enemiesEntered.Count);  
         enemiesEntered.Remove(areaTarget);
     }
 

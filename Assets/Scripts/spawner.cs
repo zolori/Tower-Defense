@@ -12,7 +12,7 @@ public class spawner : MonoBehaviour
     void Start()
     {
         transform = GetComponent<Transform>();
-        Instantiate(enemy, transform.position, Quaternion.identity);
+        //Instantiate(enemy, transform.position, Quaternion.identity);
     }
 
     private void Update()
