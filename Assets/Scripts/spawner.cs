@@ -7,19 +7,12 @@ public class spawner : MonoBehaviour
 {
     public GameObject enemy;
     Transform transform;
-
-<<<<<<< Updated upstream
-=======
     private Boolean ready = false;
 
->>>>>>> Stashed changes
-    // Start is called before the first frame update
     void Start()
     {
         transform = GetComponent<Transform>();
-<<<<<<< Updated upstream
         Instantiate(enemy, transform.position, Quaternion.identity);
-=======
     }
 
     private void Update()
@@ -38,7 +31,6 @@ public class spawner : MonoBehaviour
             CancelInvoke();
             ready = false;
         }
->>>>>>> Stashed changes
     }
 
     public void IsReady()
