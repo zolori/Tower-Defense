@@ -16,9 +16,8 @@ public class trigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (areaTarget == null) // area null verification
+        if (areaTarget == null)
         {
-            enemiesEntered.Remove(areaTarget);
             if (enemiesEntered.Count != 0)
                 areaTarget = enemiesEntered[0];
         }
@@ -29,18 +28,19 @@ public class trigger : MonoBehaviour
         if (other.tag == "Enemy")
         {
             enemiesEntered.Add(other.GetComponent<Enemy>());
-            if (enemiesEntered.Count == 1)
-            {
-                areaTarget = enemiesEntered[enemiesEntered.Count - 1];
-                InvokeRepeating("shoot", 0f, 0.5f);
-            }
+            if (areaTarget == null)
+                tirer();
         }
+    }
+
+    private void tirer()
+    {
+        areaTarget = enemiesEntered[0];
+        InvokeRepeating("shoot", 0f, 0.5f);
     }
 
     private void shoot()
     {
-        Debug.Log("shoot : " + enemiesEntered.Count);
-
         if (enemiesEntered.Count != 0)
         {
             if (areaTarget != null)
@@ -55,8 +55,10 @@ public class trigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Yolo : " + enemiesEntered.Count);  
-        enemiesEntered.Remove(areaTarget);
+        for (int i = 0; i < enemiesEntered.Count; i++)
+            enemiesEntered[i] = enemiesEntered[i + 1];
+        enemiesEntered.Remove(enemiesEntered[enemiesEntered.Count - 1]);
+        areaTarget = null;
     }
 
 }
