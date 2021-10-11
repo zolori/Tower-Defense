@@ -27,7 +27,7 @@ public class Turret : MonoBehaviour
     {
         if (target == null) // si pas de cible
             return; // on quitte
-
+        
         Vector3 direction = target.transform.position - transform.position; // calcule la direction
         Quaternion lookRotation = Quaternion.LookRotation(direction); // calcule la rotation
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;

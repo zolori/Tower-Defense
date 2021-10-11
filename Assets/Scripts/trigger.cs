@@ -16,13 +16,14 @@ public class trigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (areaTarget != null) // area null verification
+        if (areaTarget == null) // area null verification
         {
             enemiesEntered.Remove(areaTarget);
             if (enemiesEntered.Count != 0)
                 areaTarget = enemiesEntered[0];
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy")
