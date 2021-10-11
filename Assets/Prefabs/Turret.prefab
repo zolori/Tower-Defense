@@ -235,5 +235,5 @@ MonoBehaviour:
   tag: Enemy
   partToRotate: {fileID: 0}
   turnSpeed: 10
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 5243041176559824100, guid: fcc94680d933adf4a89d42a834aa2b24, type: 3}
   bulletOrigin: {fileID: 0}
