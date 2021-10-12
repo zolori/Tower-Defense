@@ -10,14 +10,19 @@ public class EndBehaviour : MonoBehaviour
     public static int playerLife = 10;
     public static int playerMaxLife = 10;
     public static int playerMoney = 90;
-    public const int mobDrop = 10;
-    public const int turretBuy = 50;
-    public const int turretUpgrade = 100;
+    public const int MobDrop = 10;
+    public const int TurretBuy = 50;
+    public const int TurretUpgrade = 100;
     public TMP_Text moneyText;
     public TMP_Text waveText;
     public spawner spawner;
     public TMP_Text winScreen;
     public TMP_Text loseScreen;
+    public TMP_Text lifeText;
+    public GameObject TryAgainButton;
+    public GameObject MenuButton;
+    public GameObject MenuButtonWin;
+    public short levelId = 1;
 
     private void Start()
     {
@@ -25,6 +30,10 @@ public class EndBehaviour : MonoBehaviour
 
         winScreen.enabled = false;
         loseScreen.enabled = false;
+        TryAgainButton.SetActive(false);
+        MenuButton.SetActive(false);
+        MenuButtonWin.SetActive(false);
+        
     }
 
     void Update()
@@ -36,20 +45,22 @@ public class EndBehaviour : MonoBehaviour
             Debug.Log("win");
             winScreen.enabled = true;
             spawner.SetEndGame(true);
+            MenuButtonWin.SetActive(true);
+            GameManager.instance.CompletedLvl(levelId);
         }
     }
 
     public static void AddMoney()
     {
-        playerMoney += mobDrop;
+        playerMoney += MobDrop;
         Debug.Log("+10");
     }
 
     public static Boolean BuyTurret()
     {
-        if (playerMoney >= turretBuy)
+        if (playerMoney >= TurretBuy)
         {
-            playerMoney -= turretBuy;
+            playerMoney -= TurretBuy;
             return true;
         }
         else
@@ -60,9 +71,9 @@ public class EndBehaviour : MonoBehaviour
 
     public static Boolean UpgradeTurret()
     {
-        if (playerMoney >= turretUpgrade)
+        if (playerMoney >= TurretUpgrade)
         {
-            playerLife -= turretUpgrade;
+            playerLife -= TurretUpgrade;
             return true;
         }
         else
@@ -84,6 +95,8 @@ public class EndBehaviour : MonoBehaviour
                 Debug.Log("lose");
                 loseScreen.enabled = true;
                 spawner.SetEndGame(true);
+                TryAgainButton.SetActive(true);
+                MenuButton.SetActive(true);
             }
             else
             {
@@ -98,5 +111,9 @@ public class EndBehaviour : MonoBehaviour
         
         moneyText.SetText("Money : " + playerMoney);
         waveText.SetText("Wave : " + spawner.GetWave());
+        lifeText.SetText("Life : " + playerLife);
+        
+        
+        
     }
 }

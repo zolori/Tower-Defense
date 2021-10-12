@@ -10,7 +10,7 @@ public class spawner : MonoBehaviour
     private Boolean _ready;
     private Boolean _endGame;
     private int _maxWaveCount = 10;
-    private int _wave = 0;
+    private int _wave;
 
     private int _enemyFirstSpawnCount = 3;
     
