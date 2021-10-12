@@ -11,6 +11,7 @@ public class trigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        InvokeRepeating("shoot", 0f, 0.5f);
     }
 
     // Update is called once per frame
@@ -28,36 +29,31 @@ public class trigger : MonoBehaviour
         if (other.tag == "Enemy")
         {
             enemiesEntered.Add(other.GetComponent<Enemy>());
-            if (areaTarget == null)
-                tirer();
         }
-    }
-
-    private void tirer()
-    {
-        areaTarget = enemiesEntered[0];
-        InvokeRepeating("shoot", 0f, 0.5f);
     }
 
     private void shoot()
     {
-        if (enemiesEntered.Count != 0)
+        while (enemiesEntered.Count != 0)
         {
+            areaTarget = enemiesEntered[0];
             if (areaTarget != null)
             {
                 turret.target = areaTarget.gameObject.GetComponent<Enemy>();
                 turret.fireBullet();
+                break;
             }
             else
+            {
+                enemiesEntered.Remove(enemiesEntered[0]);
                 turret.destroyBullet();
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        for (int i = 0; i < enemiesEntered.Count; i++)
-            enemiesEntered[i] = enemiesEntered[i + 1];
-        enemiesEntered.Remove(enemiesEntered[enemiesEntered.Count - 1]);
+        enemiesEntered.Remove(enemiesEntered[0]);
         areaTarget = null;
     }
 
