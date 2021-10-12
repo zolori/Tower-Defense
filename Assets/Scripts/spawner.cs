@@ -27,7 +27,6 @@ public class spawner : MonoBehaviour
     public void IsReady()
     {
         _ready = true;
-        //nbClick++;
         SummonWaves();
     }
 
@@ -39,7 +38,7 @@ public class spawner : MonoBehaviour
 
     public void SummonWaves()
     {
-        if (_ready && _wave <= _maxWaveCount)
+        if (_ready && _wave < _maxWaveCount)
         {
             for (int i = 0; i < _enemyFirstSpawnCount; i++)
             {
@@ -54,5 +53,10 @@ public class spawner : MonoBehaviour
     public int GetWave()
     {
         return _wave;
+    }
+
+    public int GetMaxWave()
+    {
+        return _maxWaveCount;
     }
 }

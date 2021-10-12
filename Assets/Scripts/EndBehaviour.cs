@@ -9,22 +9,32 @@ public class EndBehaviour : MonoBehaviour
 {
     public static int playerLife = 10;
     public static int playerMaxLife = 10;
-    public static int playerMoney = 90000;
-    public static int mobDrop = 10;
-    public static int turretBuy = 50;
-    public static int turretUpgrade = 100;
+    public static int playerMoney = 90;
+    public const int mobDrop = 10;
+    public const int turretBuy = 50;
+    public const int turretUpgrade = 100;
     public TMP_Text moneyText;
     public TMP_Text waveText;
     public spawner spawner;
+    public TMP_Text winScreen;
+    public TMP_Text loseScreen;
 
     private void Start()
     {
         UpdateText();
+
+        winScreen.enabled = false;
+        loseScreen.enabled = false;
     }
 
     void Update()
     {
         UpdateText();
+        if (spawner.GetWave() == spawner.GetMaxWave() && GameObject.FindGameObjectWithTag("Enemy")==null)
+        {
+            //win
+            Debug.Log("win");
+        }
     }
 
     public static void AddMoney()
@@ -69,6 +79,7 @@ public class EndBehaviour : MonoBehaviour
             if (playerLife <= 0)
             {
                 //gameover
+                Debug.Log("lose");
             }
             else
             {
