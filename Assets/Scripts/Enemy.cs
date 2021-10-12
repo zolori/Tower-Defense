@@ -21,7 +21,6 @@ public class Enemy : MonoBehaviour
         sliderHealthBar.SetMaxHealth(maxLifePoint);
 
         enemyId = System.Guid.NewGuid().ToString();
-        Debug.Log(enemyId);
     }
 
     // Update is called once per frame
