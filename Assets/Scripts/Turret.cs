@@ -13,7 +13,8 @@ public class Turret : MonoBehaviour
 
     public GameObject bulletPrefab;
     public Transform bulletOrigin;
-    
+    private GameObject bullet;
+
 
 
     // Start is called before the first frame update
@@ -59,7 +60,12 @@ public class Turret : MonoBehaviour
 
     public void fireBullet()
     {
-        GameObject bullet = Instantiate(bulletPrefab, bulletOrigin.position, bulletPrefab.transform.rotation);
+        bullet = Instantiate(bulletPrefab, bulletOrigin.position, bulletPrefab.transform.rotation);
         bullet.GetComponent<bulletBehaviour>().Target = target;
+    }
+
+    public void destroyBullet()
+    {
+        Destroy(bullet);
     }
 }

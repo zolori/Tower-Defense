@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public int lifePoint = 20;
     public int maxLifePoint = 20;
     public HealthBar sliderHealthBar;
+    public string enemyId;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,9 @@ public class Enemy : MonoBehaviour
         NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.destination = _end.transform.position;
         sliderHealthBar.SetMaxHealth(maxLifePoint);
+
+        enemyId = System.Guid.NewGuid().ToString();
+        Debug.Log(enemyId);
     }
 
     // Update is called once per frame
@@ -39,7 +43,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        
         Destroy(gameObject);
     }
+
 }
