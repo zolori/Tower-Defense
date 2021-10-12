@@ -8,6 +8,7 @@ public class spawner : MonoBehaviour
     public GameObject enemy;
     Transform _transform;
     private Boolean _ready;
+    private Boolean _endGame;
     private int _maxWaveCount = 10;
     private int _wave = 0;
 
@@ -38,7 +39,7 @@ public class spawner : MonoBehaviour
 
     public void SummonWaves()
     {
-        if (_ready && _wave < _maxWaveCount)
+        if (_ready && _wave < _maxWaveCount && !_endGame)
         {
             for (int i = 0; i < _enemyFirstSpawnCount; i++)
             {
@@ -58,5 +59,10 @@ public class spawner : MonoBehaviour
     public int GetMaxWave()
     {
         return _maxWaveCount;
+    }
+
+    public void SetEndGame(Boolean prmEndGameValue)
+    {
+        _endGame = prmEndGameValue;
     }
 }

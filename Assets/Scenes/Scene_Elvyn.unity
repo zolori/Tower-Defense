@@ -435,6 +435,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3970508174306260370, guid: a973bd9cf76c7ec4caddfb6fc4ef9804, type: 3}
   m_PrefabInstance: {fileID: 3970508174201472116}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &241892284 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7972161362272824893, guid: 9f8df456bdb31ab4694ba4609b8077bf, type: 3}
+  m_PrefabInstance: {fileID: 7851484408884767336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &244151283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1651,6 +1662,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5292458794977486656, guid: a4979c50abefed04d88e1b02d219905d, type: 3}
   m_PrefabInstance: {fileID: 2004780018}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1423332859 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8572481485960009190, guid: 9f8df456bdb31ab4694ba4609b8077bf, type: 3}
+  m_PrefabInstance: {fileID: 7851484408884767336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1475737670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2480,6 +2502,14 @@ PrefabInstance:
       propertyPath: moneyText
       value: 
       objectReference: {fileID: 1960390418}
+    - target: {fileID: 416564670339533177, guid: 3cebe4eb153cf1342bd9315db95bb42d, type: 3}
+      propertyPath: winScreen
+      value: 
+      objectReference: {fileID: 241892284}
+    - target: {fileID: 416564670339533177, guid: 3cebe4eb153cf1342bd9315db95bb42d, type: 3}
+      propertyPath: loseScreen
+      value: 
+      objectReference: {fileID: 1423332859}
     - target: {fileID: 4300309434514597384, guid: 3cebe4eb153cf1342bd9315db95bb42d, type: 3}
       propertyPath: m_RootOrder
       value: 14

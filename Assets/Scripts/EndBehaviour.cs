@@ -34,6 +34,8 @@ public class EndBehaviour : MonoBehaviour
         {
             //win
             Debug.Log("win");
+            winScreen.enabled = true;
+            spawner.SetEndGame(true);
         }
     }
 
@@ -80,6 +82,8 @@ public class EndBehaviour : MonoBehaviour
             {
                 //gameover
                 Debug.Log("lose");
+                loseScreen.enabled = true;
+                spawner.SetEndGame(true);
             }
             else
             {
