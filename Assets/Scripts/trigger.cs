@@ -56,5 +56,4 @@ public class trigger : MonoBehaviour
         enemiesEntered.Remove(enemiesEntered[0]);
         areaTarget = null;
     }
-
 }
