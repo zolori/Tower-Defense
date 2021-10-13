@@ -22,17 +22,11 @@ public class MainMenu : MonoBehaviour
 
     public void loadLvl1()
     {
-        SceneManager.LoadScene("Scenes/Scene_lvl_1");
+        GameManager.instance.loadLvl1();
     }
     public void loadLvl2()
     {
         
-        SceneManager.LoadScene("Scenes/Scene_lvl_2");
+        GameManager.instance.loadLvl2();
     }
-
-    public void loadMenu()
-    {
-        SceneManager.LoadScene("Scenes/MainMenu");
-    }
-    
 }

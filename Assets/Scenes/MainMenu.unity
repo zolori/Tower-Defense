@@ -766,6 +766,7 @@ GameObject:
   - component: {fileID: 930596485}
   - component: {fileID: 930596484}
   - component: {fileID: 930596483}
+  - component: {fileID: 930596487}
   m_Layer: 5
   m_Name: MainMenuUI
   m_TagString: Untagged
@@ -854,6 +855,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &930596487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930596482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9cfd5fe54f69bc419f982d9ee2c51c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &966905047
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,8 +950,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1529367782}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 930596487}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: loadLvl1
         m_Mode: 1
         m_Arguments:
@@ -1034,7 +1047,6 @@ MonoBehaviour:
   lvl2Btn: {fileID: 1631702825}
   playerLife: 10
   playerMoney: 90
-  playerMaxMoney: 90
 --- !u!1 &1631702825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,8 +1130,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1529367782}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 930596487}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: loadLvl2
         m_Mode: 1
         m_Arguments:

@@ -47,14 +47,16 @@ public class GameManager : MonoBehaviour
     // }
     public void loadLvl1()
     {
-        reloadValues();
+        
         SceneManager.LoadScene("Scenes/Scene_lvl_1");
+        reloadValues();
     }
 
     public void loadLvl2()
     {
-        reloadValues();
+        
         SceneManager.LoadScene("Scenes/Scene_lvl_2");
+        reloadValues();
     }
 
     public void loadMenu()

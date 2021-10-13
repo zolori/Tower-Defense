@@ -36,12 +36,10 @@ public class EndBehaviour : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("fail");
         UpdateText();
         if (hud.spawner.GetWave() == hud.spawner.GetMaxWave() && GameObject.FindGameObjectWithTag("Enemy") == null)
         {
             //win
-            Debug.Log("win");
             hud.winScreen.enabled = true;
             hud.spawner.SetEndGame(true);
             hud.MenuButtonWin.SetActive(true);
