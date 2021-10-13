@@ -111,7 +111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.12000275, y: 1.74}
+  m_AnchoredPosition: {x: -0.12000275, y: 1}
   m_SizeDelta: {x: 159.9, y: 13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1112509830
@@ -394,10 +394,12 @@ GameObject:
   - component: {fileID: 3390640116119449844}
   - component: {fileID: 4450294771570016769}
   - component: {fileID: 6751314369180605812}
-  - component: {fileID: 4582305483125368566}
   - component: {fileID: 5455670511391481616}
   - component: {fileID: 4633178997634542288}
   - component: {fileID: -2250651682081917423}
+  - component: {fileID: 2116525995}
+  - component: {fileID: 2116525996}
+  - component: {fileID: 2116526003}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Enemy
@@ -427,7 +429,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6231076586368294240}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 0b54733d5329ad34db9d1e5fe04739e6, type: 3}
 --- !u!23 &6751314369180605812
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -469,20 +471,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4582305483125368566
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6231076586368294240}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &5455670511391481616
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -492,7 +480,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6231076586368294240}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 0.8
   m_Speed: 10
   m_Acceleration: 1000
   avoidancePriority: 50
@@ -501,8 +489,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
+  m_Height: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &4633178997634542288
@@ -517,10 +505,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145d0218f5ef8244b6a9ff3ee882ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _end: {fileID: 7929703438182770687, guid: 3cebe4eb153cf1342bd9315db95bb42d, type: 3}
   lifePoint: 20
   maxLifePoint: 20
   sliderHealthBar: {fileID: 1657810979}
+  enemyId: 
 --- !u!54 &-2250651682081917423
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -537,3 +525,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &2116525995
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6231076586368294240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.45878696, y: 0.697812, z: 1.2696438}
+  m_Center: {x: 0.008800983, y: 0.34174016, z: 0.13146877}
+--- !u!95 &2116525996
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6231076586368294240}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 0b54733d5329ad34db9d1e5fe04739e6, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &2116526003
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6231076586368294240}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 427f72e3e110e5145bf4956336b40f6f, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
