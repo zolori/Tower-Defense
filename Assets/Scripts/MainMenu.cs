@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject Level_One;
-    public GameObject Level_Two;
+    // public Scene Level_One;
+    // public Scene Level_Two;
     
     // Start is called before the first frame update
     void Start()
@@ -20,13 +20,19 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    void loadLvl1()
+    public void loadLvl1()
     {
-        SceneManager.LoadScene("Scene_Elvyn");
+        SceneManager.LoadScene("Scenes/Scene_lvl_1");
     }
-    void loadLvl2()
+    public void loadLvl2()
     {
-        //if
-        SceneManager.LoadScene("Scene_Alban");
+        
+        SceneManager.LoadScene("Scenes/Scene_lvl_2");
     }
+
+    public void loadMenu()
+    {
+        SceneManager.LoadScene("Scenes/MainMenu");
+    }
+    
 }

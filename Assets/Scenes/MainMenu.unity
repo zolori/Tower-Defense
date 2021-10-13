@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 1cb7c559085bd6a4e94fe72b6392c24a, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 930596484}
   - component: {fileID: 930596483}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: MainMenuUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -936,7 +936,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 966905050}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1529367782}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: loadLvl1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &966905050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1020,7 +1032,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lvl1Btn: {fileID: 966905047}
   lvl2Btn: {fileID: 1631702825}
-  LastCompletedLevel: 0
+  playerLife: 10
+  playerMoney: 90
+  playerMaxMoney: 90
 --- !u!1 &1631702825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1117,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1631702828}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1529367782}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: loadLvl2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1631702828
 MonoBehaviour:
   m_ObjectHideFlags: 0

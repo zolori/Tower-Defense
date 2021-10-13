@@ -27,16 +27,15 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void Damaged(int prmDamage)
     {
         lifePoint -= prmDamage;
         sliderHealthBar.SetHealth(lifePoint);
-        if(lifePoint <= 0)
-        {   
-            EndBehaviour.AddMoney();
+        if (lifePoint <= 0)
+        {
+            GameManager.instance.AddMoney();
             Die();
         }
     }
@@ -45,5 +44,4 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
 }

@@ -7,81 +7,49 @@ using UnityEngine.UI;
 
 public class EndBehaviour : MonoBehaviour
 {
-    public static int playerLife = 10;
-    public static int playerMaxLife = 10;
-    public static int playerMoney = 90;
-    public const int MobDrop = 10;
-    public const int TurretBuy = 50;
-    public const int TurretUpgrade = 100;
-    public TMP_Text moneyText;
-    public TMP_Text waveText;
-    public spawner spawner;
-    public TMP_Text winScreen;
-    public TMP_Text loseScreen;
-    public TMP_Text lifeText;
-    public GameObject TryAgainButton;
-    public GameObject MenuButton;
-    public GameObject MenuButtonWin;
-    public short levelId = 1;
+    public GameObject HUD;
+    public HUD hud;
+
+    // private TMP_Text moneyText = hud.moneyText;
+    // private TMP_Text waveText = hud.waveText;
+    // private spawner spawner = hud.spawner;
+    // private TMP_Text winScreen = hud.winScreen;
+    // private TMP_Text loseScreen = hud.loseScreen;
+    // private TMP_Text lifeText = hud.lifeText;
+    // private GameObject TryAgainButton = hud.TryAgainButton;
+    // private GameObject MenuButton = hud.MenuButton;
+    // private GameObject MenuButtonWin = hud.MenuButtonWin;
+    private short levelId = 1;
 
     private void Start()
     {
-        UpdateText();
+        HUD = GameObject.Find("HUD");
+        hud = HUD.GetComponent<HUD>();
 
-        winScreen.enabled = false;
-        loseScreen.enabled = false;
-        TryAgainButton.SetActive(false);
-        MenuButton.SetActive(false);
-        MenuButtonWin.SetActive(false);
-        
+
+        hud.winScreen.enabled = false;
+        hud.loseScreen.enabled = false;
+        hud.TryAgainButton.SetActive(false);
+        hud.MenuButton.SetActive(false);
+        hud.MenuButtonWin.SetActive(false);
     }
 
     void Update()
     {
+        Debug.Log("fail");
         UpdateText();
-        if (spawner.GetWave() == spawner.GetMaxWave() && GameObject.FindGameObjectWithTag("Enemy")==null)
+        if (hud.spawner.GetWave() == hud.spawner.GetMaxWave() && GameObject.FindGameObjectWithTag("Enemy") == null)
         {
             //win
             Debug.Log("win");
-            winScreen.enabled = true;
-            spawner.SetEndGame(true);
-            MenuButtonWin.SetActive(true);
+            hud.winScreen.enabled = true;
+            hud.spawner.SetEndGame(true);
+            hud.MenuButtonWin.SetActive(true);
             GameManager.instance.CompletedLvl(levelId);
         }
     }
 
-    public static void AddMoney()
-    {
-        playerMoney += MobDrop;
-        Debug.Log("+10");
-    }
 
-    public static Boolean BuyTurret()
-    {
-        if (playerMoney >= TurretBuy)
-        {
-            playerMoney -= TurretBuy;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    public static Boolean UpgradeTurret()
-    {
-        if (playerMoney >= TurretUpgrade)
-        {
-            playerLife -= TurretUpgrade;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
@@ -89,31 +57,29 @@ public class EndBehaviour : MonoBehaviour
             Enemy enemy = other.GetComponent<Enemy>();
             enemy.Die();
 
-            if (playerLife <= 0)
+            if (GameManager.instance.playerLife <= 0)
             {
                 //gameover
                 Debug.Log("lose");
-                loseScreen.enabled = true;
-                spawner.SetEndGame(true);
-                TryAgainButton.SetActive(true);
-                MenuButton.SetActive(true);
+                hud.loseScreen.enabled = true;
+                hud.spawner.SetEndGame(true);
+                hud.TryAgainButton.SetActive(true);
+                hud.MenuButton.SetActive(true);
             }
             else
             {
-                playerLife --;
+                GameManager.instance.playerLife--;
             }
-            
         }
     }
 
-    public void UpdateText()
+    void UpdateText()
     {
-        
-        moneyText.SetText("Money : " + playerMoney);    
-        waveText.SetText("Wave : " + spawner.GetWave());
-        lifeText.SetText("Life : " + playerLife);
-        
-        
-        
+        Debug.Log("fail+");
+
+
+        hud.moneyText.SetText("Money : " + GameManager.instance.playerMoney);
+        hud.waveText.SetText("Wave : " + hud.spawner.GetWave());
+        hud.lifeText.SetText("Life : " + GameManager.instance.playerLife);
     }
 }

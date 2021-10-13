@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7929703438182770687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 10.118348}
+  m_LocalScale: {x: 1, y: 1, z: 6.5925}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -114,6 +114,11 @@ MonoBehaviour:
   spawner: {fileID: 0}
   winScreen: {fileID: 0}
   loseScreen: {fileID: 0}
+  lifeText: {fileID: 0}
+  TryAgainButton: {fileID: 0}
+  MenuButton: {fileID: 0}
+  MenuButtonWin: {fileID: 0}
+  levelId: 1
 --- !u!54 &1843849641
 Rigidbody:
   m_ObjectHideFlags: 0

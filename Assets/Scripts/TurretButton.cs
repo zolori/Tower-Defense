@@ -8,15 +8,15 @@ public class TurretButton : MonoBehaviour
     public Turret _turret;
     public Canvas _canvas;
 
-    
-    
+
     public void SpawnTurret()
     {
-        if (EndBehaviour.BuyTurret())
+        if (GameManager.instance.BuyTurret())
         {
             Instantiate(_turret, transform.position, transform.rotation);
+
+
             _canvas.enabled = false;
-        };
-        
+        }
     }
 }

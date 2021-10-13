@@ -388,7 +388,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1692961219}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6454918090814393642}
+        m_TargetAssemblyTypeName: HUD, Assembly-CSharp
+        m_MethodName: getMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &554367003234324479
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +655,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7494795166701519712}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6454918090814393642}
+        m_TargetAssemblyTypeName: HUD, Assembly-CSharp
+        m_MethodName: Reload
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4690511197283719639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,7 +1190,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 749675738477654774}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6454918090814393642}
+        m_TargetAssemblyTypeName: HUD, Assembly-CSharp
+        m_MethodName: getMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7851484408912793142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1215,7 @@ GameObject:
   - component: {fileID: 7851484408912793097}
   - component: {fileID: 7851484408912793096}
   - component: {fileID: 7851484408912793143}
+  - component: {fileID: 6454918090814393642}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -1275,6 +1312,28 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6454918090814393642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7851484408912793142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16321f2a9f07c424291253f3b3201dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyText: {fileID: 1923314456940506719}
+  waveText: {fileID: 6336781276903593919}
+  Spawner: {fileID: 0}
+  spawner: {fileID: 0}
+  winScreen: {fileID: 7972161362272824893}
+  loseScreen: {fileID: 8572481485960009190}
+  lifeText: {fileID: 1614389949}
+  TryAgainButton: {fileID: 4634851204656963055}
+  MenuButton: {fileID: 5822532398573998627}
+  MenuButtonWin: {fileID: 1692961216}
 --- !u!1 &7851484409790533475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,9 +1589,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: spawner, Assembly-CSharp
-        m_MethodName: IsReady
+      - m_Target: {fileID: 6454918090814393642}
+        m_TargetAssemblyTypeName: HUD, Assembly-CSharp
+        m_MethodName: Ready
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -13,25 +13,25 @@ public class spawner : MonoBehaviour
     private int _wave;
 
     private int _enemyFirstSpawnCount = 3;
-    
+
 
     void Start()
     {
         _transform = GetComponent<Transform>();
-        
     }
 
     private void Update()
     {
         //InvokeRepeating(nameof(Spawn), 0f, 1);
     }
+
     public void IsReady()
     {
         _ready = true;
         SummonWaves();
     }
 
-    
+
     private void Spawn()
     {
         Instantiate(enemy, _transform.position + new Vector3(-2, 0, 0), Quaternion.identity);
