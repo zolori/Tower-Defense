@@ -108,12 +108,8 @@ public class EndBehaviour : MonoBehaviour
 
     public void UpdateText()
     {
-        
         moneyText.SetText("Money : " + playerMoney);    
         waveText.SetText("Wave : " + spawner.GetWave());
         lifeText.SetText("Life : " + playerLife);
-        
-        
-        
     }
 }
