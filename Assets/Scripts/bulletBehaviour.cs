@@ -32,7 +32,6 @@ public class bulletBehaviour : MonoBehaviour
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
-                Debug.Log("Hit");
                 enemy.Damaged(5);   
             }
             Destroy(gameObject);

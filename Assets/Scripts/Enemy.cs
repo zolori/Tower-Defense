@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject _end;
+    private GameObject _end;
 
     public int lifePoint = 20;
     public int maxLifePoint = 20;
@@ -17,11 +17,11 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
+        _end = GameObject.FindWithTag("Finish");
         navMeshAgent.destination = _end.transform.position;
         sliderHealthBar.SetMaxHealth(maxLifePoint);
 
         enemyId = System.Guid.NewGuid().ToString();
-        Debug.Log(enemyId);
     }
 
     // Update is called once per frame

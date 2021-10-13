@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1843849641}
   m_Layer: 0
   m_Name: End
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7929703438182770687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.88, y: 1.57, z: -29.53}
-  m_LocalScale: {x: 1, y: 1, z: 6.5925}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 10.118348}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -114,10 +114,6 @@ MonoBehaviour:
   spawner: {fileID: 0}
   winScreen: {fileID: 0}
   loseScreen: {fileID: 0}
-  lifeText: {fileID: 0}
-  TryAgainButton: {fileID: 0}
-  MenuButton: {fileID: 0}
-  MenuButtonWin: {fileID: 0}
 --- !u!54 &1843849641
 Rigidbody:
   m_ObjectHideFlags: 0
