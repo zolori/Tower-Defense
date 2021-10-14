@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
-  _turret: {fileID: 7553567716213352580, guid: 3bf69103881981b488b19a6d701502c7, type: 3}
+  _turret: {fileID: 7553567716213352580, guid: 39e352c60401e354aa5bf4c39aa95b5f, type: 3}
   _canvas: {fileID: 8916150195480195947}
 --- !u!1 &8916150195480195948
 GameObject:
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8916150195480195949
 MonoBehaviour:
   m_ObjectHideFlags: 0

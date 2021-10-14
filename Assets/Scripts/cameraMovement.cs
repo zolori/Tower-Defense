@@ -23,7 +23,7 @@ public class cameraMovement : MonoBehaviour
             transform.position += Vector3.right * moveSpeed * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.Q) && transform.position.x >= -5)
+        if (Input.GetKey(KeyCode.Q) && transform.position.x >= -10)
         {
             transform.position += Vector3.left * moveSpeed * Time.deltaTime;
         }

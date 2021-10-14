@@ -13,7 +13,7 @@ public class TurretButton : MonoBehaviour
     {
         if (GameManager.instance.BuyTurret())
         {
-            Instantiate(_turret, transform.position, transform.rotation);
+            Instantiate(_turret, transform.position + new Vector3(0, -0.5f, 0), transform.rotation);
 
 
             _canvas.enabled = false;
