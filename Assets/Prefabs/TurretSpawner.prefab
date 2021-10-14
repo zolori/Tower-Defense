@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
-  _turret: {fileID: 6398515739407309927, guid: b70d3997f9d74fc4181ce6f2215343f2, type: 3}
+  _turret: {fileID: 7553567716213352580, guid: 3bf69103881981b488b19a6d701502c7, type: 3}
   _canvas: {fileID: 8916150195480195947}
 --- !u!1 &8916150195480195948
 GameObject:
