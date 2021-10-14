@@ -9,7 +9,6 @@ public class EndBehaviour : MonoBehaviour
 {
     public GameObject HUD;
     public HUD hud;
-    public Boolean loss ;
 
     // private TMP_Text moneyText = hud.moneyText;
     // private TMP_Text waveText = hud.waveText;
@@ -38,19 +37,16 @@ public class EndBehaviour : MonoBehaviour
     void Update()
     {
         UpdateText();
-        if (loss == false)
+
+        if (hud.spawner.GetWave() == hud.spawner.GetMaxWave() && GameObject.FindGameObjectWithTag("Enemy") == null && GameManager.instance.playerLife > 0)
         {
-            if (hud.spawner.GetWave() == hud.spawner.GetMaxWave() && GameObject.FindGameObjectWithTag("Enemy") == null)
-                    {
-                        //win
-                        Debug.Log(loss.ToString());
-                        hud.winScreen.enabled = true;
-                        hud.spawner.SetEndGame(true);
-                        hud.MenuButtonWin.SetActive(true);
-                        GameManager.instance.CompletedLvl(levelId);
-                    }
+            //win
+            
+            hud.winScreen.enabled = true;
+            hud.spawner.SetEndGame(true);
+            hud.MenuButtonWin.SetActive(true);
+            GameManager.instance.CompletedLvl(levelId);
         }
-        
     }
 
 
@@ -65,7 +61,6 @@ public class EndBehaviour : MonoBehaviour
             {
                 //gameover
                 Debug.Log("lose");
-                loss = true;
                 hud.loseScreen.enabled = true;
                 hud.spawner.SetEndGame(true);
                 hud.TryAgainButton.SetActive(true);
@@ -77,11 +72,14 @@ public class EndBehaviour : MonoBehaviour
             }
         }
     }
+    
+        
 
-    void UpdateText()
+        void UpdateText()
     {
         hud.moneyText.SetText("Money : " + GameManager.instance.playerMoney);
         hud.waveText.SetText("Wave : " + hud.spawner.GetWave());
         hud.lifeText.SetText("Life : " + GameManager.instance.playerLife);
+        hud.EnemyLeftText.SetText("Enemy : " + GameObject.FindGameObjectsWithTag("Enemy").Length);
     }
 }

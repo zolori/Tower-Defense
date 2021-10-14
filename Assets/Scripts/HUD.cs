@@ -12,6 +12,7 @@ public class HUD : MonoBehaviour
     public TMP_Text winScreen;
     public TMP_Text loseScreen;
     public TMP_Text lifeText;
+    public TMP_Text EnemyLeftText;
     public GameObject TryAgainButton;
     public GameObject MenuButton;
     public GameObject MenuButtonWin;
@@ -36,10 +37,5 @@ public class HUD : MonoBehaviour
     public void Ready()
     {
         spawner.IsReady();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }
