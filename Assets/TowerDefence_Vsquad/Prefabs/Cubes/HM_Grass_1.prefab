@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4792822069781494}
   - component: {fileID: 33947880699169324}
   - component: {fileID: 23304878688273056}
-  - component: {fileID: 65862053748152222}
   m_Layer: 0
   m_Name: HM_Grass_1
   m_TagString: Untagged
@@ -82,16 +81,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &65862053748152222
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863560779392640}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.8240961, y: 1.8240957, z: 1.8241023}
-  m_Center: {x: 0.9120473, y: 0.91204786, z: -0.91205114}
