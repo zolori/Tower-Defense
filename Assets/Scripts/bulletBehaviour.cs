@@ -21,7 +21,6 @@ public class bulletBehaviour : MonoBehaviour
         {
             transform.LookAt(Target.transform.position);
         }
-        //transform.position += transform.forward * Time.deltaTime * bulletSpeed;
         rigidbody.velocity = transform.forward * bulletSpeed;
     }
 
