@@ -40,24 +40,25 @@ public class GameManager : MonoBehaviour
         lastCompletedLevel = prmIndex;
     }
 
-    // public void loadLevel(int prmNum)
+    public void loadLevel(int prmNum)
+    {
+        reloadValues();
+        SceneManager.LoadScene("Scenes/Scene_lvl_" + prmNum);
+    }
+    
+    // public void loadLvl1()
     // {
+    //     
+    //     SceneManager.LoadScene("Scenes/Scene_lvl_1");
     //     reloadValues();
-    //     SceneManager.LoadScene("Scenes/Scene_lvl_" + prmNum);
     // }
-    public void loadLvl1()
-    {
-        
-        SceneManager.LoadScene("Scenes/Scene_lvl_1");
-        reloadValues();
-    }
-
-    public void loadLvl2()
-    {
-        
-        SceneManager.LoadScene("Scenes/Scene_lvl_2");
-        reloadValues();
-    }
+    //
+    // public void loadLvl2()
+    // {
+    //     
+    //     SceneManager.LoadScene("Scenes/Scene_lvl_2");
+    //     reloadValues();
+    // }
 
     public void loadMenu()
     {

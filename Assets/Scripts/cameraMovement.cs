@@ -16,7 +16,9 @@ public class cameraMovement : MonoBehaviour
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
+        float edgeSize = 100f;
 
+        //Move with keyborad
 
         if (Input.GetKey(KeyCode.D) && transform.position.x <= 5)
         {
@@ -36,6 +38,28 @@ public class cameraMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Z) && transform.position.z <= -20)
         {
             transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
+        }
+
+        //Move with mouse
+
+        if (Input.mousePosition.x > Screen.width - edgeSize)
+        {
+            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+        }
+
+        if (Input.mousePosition.x < edgeSize)
+        {
+            transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+        }
+
+        if (Input.mousePosition.y > Screen.height - edgeSize)
+        {
+            transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
+        }
+
+        if (Input.mousePosition.y < edgeSize)
+        {
+            transform.position += Vector3.back * moveSpeed * Time.deltaTime;
         }
     }
 }

@@ -1,32 +1,65 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // public Scene Level_One;
-    // public Scene Level_Two;
-    
+    public GameObject Level_One;
+    public GameObject Level_Two;
+    public GameObject Play;
+    public GameObject Quit;
+    public GameObject Back;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        Level_One.SetActive(false);
+        Level_Two.SetActive(false);
+        Back.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+    }
+
+    public void LoadLvl(int prmLvlNumber)
+    {
+        GameManager.instance.loadLevel(prmLvlNumber);
+    }
+
+    public void OnPlayClick()
+    {
+        
+        Level_One.SetActive(true);
+        Level_Two.SetActive(true);
+        Back.SetActive(true);
+        Play.SetActive(false);
+        Quit.SetActive(false);
         
     }
 
-    public void loadLvl1()
-    {
-        GameManager.instance.loadLvl1();
-    }
-    public void loadLvl2()
+    public void OnQuitClick()
     {
         
-        GameManager.instance.loadLvl2();
+        Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
+        
+    }
+
+    public void OnBackClick()
+    {
+        Level_One.SetActive(false);
+        Level_Two.SetActive(false);
+        Back.SetActive(false);
+        Play.SetActive(true);
+        Quit.SetActive(true);
+        
+        
     }
 }
