@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
-        GameObject deathanmation = Instantiate(DeathParticle, transform.position, transform.rotation);
+        Instantiate(DeathParticle, new Vector3(transform.position.x, 2, transform.position.z), transform.rotation);
         
         
     }
