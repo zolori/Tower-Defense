@@ -146,7 +146,6 @@ GameObject:
   - component: {fileID: 8916150194797484884}
   - component: {fileID: 8916150194797484887}
   - component: {fileID: 8916150194797484886}
-  - component: {fileID: 8916150194797484885}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -256,7 +255,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8916150194797484885}
+      - m_Target: {fileID: 7301862236583162592}
         m_TargetAssemblyTypeName: TurretButton, Assembly-CSharp
         m_MethodName: SpawnTurret
         m_Mode: 1
@@ -268,21 +267,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8916150194797484885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8916150194797484888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eeb24bb407ebac4cbbbfca3aba7a2a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
-  _turret: {fileID: 7553567716213352580, guid: 39e352c60401e354aa5bf4c39aa95b5f, type: 3}
-  _canvas: {fileID: 8916150195480195947}
 --- !u!1 &8916150195480195948
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +279,7 @@ GameObject:
   - component: {fileID: 8916150195480195947}
   - component: {fileID: 8916150195480195946}
   - component: {fileID: 8916150195480195949}
+  - component: {fileID: 7301862236583162592}
   m_Layer: 5
   m_Name: TurretSpawner
   m_TagString: Untagged
@@ -383,3 +368,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7301862236583162592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8916150195480195948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eeb24bb407ebac4cbbbfca3aba7a2a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _turret: {fileID: 7553567716213352580, guid: 39e352c60401e354aa5bf4c39aa95b5f, type: 3}
+  _canvas: {fileID: 8916150195480195947}

@@ -16,14 +16,20 @@ public class Turret : MonoBehaviour
     public Transform bulletOrigin;
     private GameObject bullet;
 
-    private HUD _hud;
+    public GameObject upgradeHud;
+    public GameObject upgradeButton;
+    public GameObject buttonTurret;
+    public Turret upgradeTurret;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        _hud = GameObject.FindGameObjectWithTag("UI").GetComponent<HUD>();
-
+        upgradeHud.SetActive(false);
+        if (gameObject.CompareTag("TurretLvl2"))
+        {
+            upgradeButton.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -49,15 +55,67 @@ public class Turret : MonoBehaviour
         Destroy(bullet);
     }
 
-    public void UpgradeMenu(Turret prmTurret)
+    public void UpgradeMenuOn()
     {
         Debug.Log("Done");
-        _hud.TurretMenu(prmTurret);
-        
+        upgradeHud.SetActive(true);
+        if (gameObject.CompareTag("TurretLvl2"))
+        {
+            upgradeButton.SetActive(false);
+        }
+
+        GameManager.instance.IsOpen = true;
     }
-    
+
+    public void UpgradeMenuOff()
+    {
+        upgradeHud.SetActive(false);
+        GameManager.instance.IsOpen = false;
+    }
+
+    public void UpgradeTurret(GameObject prmGameObject)
+    {
+        Debug.Log("Upgrading");
+        if (GameManager.instance.playerMoney >= GameManager.instance.turretUpgrade)
+        {
+            GameManager.instance.playerMoney -= GameManager.instance.turretUpgrade;
+            UTurret(prmGameObject);
+        }
+    }
+
+    public void UTurret(GameObject prmGameObject)
+    {
+        Instantiate(upgradeTurret, prmGameObject.transform.position, prmGameObject.transform.rotation);
+        UpgradeMenuOff();
+        Destroy(prmGameObject);
+    }
+
+    public void SellTurret(GameObject prmGameObject)
+    {
+        Instantiate(buttonTurret, prmGameObject.transform.position - new Vector3(0, -0.5f, 0),
+            buttonTurret.transform.rotation);
+        GameManager.instance.playerMoney += GameManager.instance.TurretRefund;
+        UpgradeMenuOff();
+        Destroy(prmGameObject);
+    }
+
+    public void Refund()
+    {
+        if (gameObject.CompareTag("TurretLvl2"))
+        {
+            GameManager.instance.playerMoney += GameManager.instance.TurretRefundUpgrade;
+        }
+        else
+        {
+            GameManager.instance.playerMoney += GameManager.instance.TurretRefund;
+        }
+    }
+
     private void OnMouseDown()
     {
-        UpgradeMenu(GetComponent<Turret>());
+        if (GameManager.instance.IsOpen == false)
+        {
+            UpgradeMenuOn();
+        }
     }
 }

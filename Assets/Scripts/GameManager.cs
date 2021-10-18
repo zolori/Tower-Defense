@@ -11,13 +11,21 @@ public class GameManager : MonoBehaviour
     public GameObject lvl2Btn;
     public static short lastCompletedLevel;
 
+    public Turret upgradeTurret;
+    public Turret baseTurret;
+    public GameObject buttonTurret;
+
     public int playerLife = 10;
     private const int PlayerMaxLife = 10;
-    public int playerMoney = 90;
-    private int playerInitMoney = 90;
-    private const int MobDrop = 10;
-    private const int TurretBuy = 50;
-    private const int TurretUpgrade = 100;
+    public int playerMoney = 900;
+    private int playerInitMoney = 900;
+    private int MobDrop = 10;
+    public int TurretBuy = 50;
+    public int TurretRefund = 30;
+    public int TurretRefundUpgrade = 70;
+    public int turretUpgrade = 100;
+
+    public bool IsOpen = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,20 +53,6 @@ public class GameManager : MonoBehaviour
         reloadValues();
         SceneManager.LoadScene("Scenes/Scene_lvl_" + prmNum);
     }
-    
-    // public void loadLvl1()
-    // {
-    //     
-    //     SceneManager.LoadScene("Scenes/Scene_lvl_1");
-    //     reloadValues();
-    // }
-    //
-    // public void loadLvl2()
-    // {
-    //     
-    //     SceneManager.LoadScene("Scenes/Scene_lvl_2");
-    //     reloadValues();
-    // }
 
     public void loadMenu()
     {
@@ -96,17 +90,6 @@ public class GameManager : MonoBehaviour
             return false;
         }
     }
-
-    public Boolean UpgradeTurret()
-    {
-        if (playerMoney >= TurretUpgrade)
-        {
-            playerLife -= TurretUpgrade;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+    
+    
 }

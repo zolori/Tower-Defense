@@ -45,5 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lvl1Btn: {fileID: 0}
   lvl2Btn: {fileID: 0}
+  upgradeTurret: {fileID: 9001339707719926819, guid: 09dae1fe63f2ede4ca17f642d6fb2ac6, type: 3}
+  baseTurret: {fileID: 7553567716213352580, guid: 39e352c60401e354aa5bf4c39aa95b5f, type: 3}
+  buttonTurret: {fileID: 8916150195480195948, guid: a1128835e63c6934c8958cbab7f16710, type: 3}
   playerLife: 10
   playerMoney: 90
