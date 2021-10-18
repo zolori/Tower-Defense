@@ -53,5 +53,11 @@ public class Turret : MonoBehaviour
     {
         Debug.Log("Done");
         _hud.TurretMenu(prmTurret);
+        
+    }
+    
+    private void OnMouseDown()
+    {
+        UpgradeMenu(GetComponent<Turret>());
     }
 }

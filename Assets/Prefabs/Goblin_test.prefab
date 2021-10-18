@@ -235,7 +235,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088935608605095827}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.60983795}
+  m_LocalPosition: {x: 0, y: 0, z: -0.021}
   m_LocalScale: {x: 0.010449128, y: 0.010449128, z: 0.010449128}
   m_Children:
   - {fileID: 4575754685248792603}
@@ -244,7 +244,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.19704509, y: 0.6849166}
+  m_AnchoredPosition: {x: -0.001, y: 1.24}
   m_SizeDelta: {x: 159.9, y: 13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7914783966187738771
@@ -1316,8 +1316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145d0218f5ef8244b6a9ff3ee882ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifePoint: 20
-  maxLifePoint: 20
+  lifePoint: 30
+  maxLifePoint: 30
   sliderHealthBar: {fileID: 4764062056287708378}
   enemyId: 
 --- !u!195 &6105224814948001256
