@@ -7,6 +7,7 @@ public class bulletBehaviour : MonoBehaviour
     public float bulletSpeed = 500f;
     internal Enemy Target;
     private Rigidbody rigidbody;
+    internal int BulletDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,7 @@ public class bulletBehaviour : MonoBehaviour
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.Damaged(5);   
+                enemy.Damaged(BulletDamage);   
             }
             Destroy(gameObject);
         }

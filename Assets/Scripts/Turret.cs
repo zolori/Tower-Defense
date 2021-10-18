@@ -11,6 +11,7 @@ public class Turret : MonoBehaviour
     public string tag = "Enemy";
     public Transform partToRotate;
     public float turnSpeed = 10f;
+    public int Bulletdamage = 5;
 
     public GameObject bulletPrefab;
     public Transform bulletOrigin;
@@ -49,6 +50,7 @@ public class Turret : MonoBehaviour
     {
         bullet = Instantiate(bulletPrefab, bulletOrigin.position, bulletPrefab.transform.rotation);
         bullet.GetComponent<bulletBehaviour>().Target = target;
+        bullet.GetComponent<bulletBehaviour>().BulletDamage = Bulletdamage;
 
         Instantiate(particules, bulletOrigin.position, bulletPrefab.transform.rotation);
     }

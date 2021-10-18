@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
     public void AddMoney()
     {
         playerMoney += MobDrop;
-        Debug.Log("+10");
+        //Debug.Log("+10");
     }
 
     public Boolean BuyTurret()

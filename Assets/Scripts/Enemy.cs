@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public int maxLifePoint = 20;
     public HealthBar sliderHealthBar;
     public string enemyId;
+    public GameObject DeathParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -43,5 +44,8 @@ public class Enemy : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
+        GameObject deathanmation = Instantiate(DeathParticle, transform.position, transform.rotation);
+        
+        
     }
 }

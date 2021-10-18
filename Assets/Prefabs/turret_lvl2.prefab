@@ -1106,8 +1106,10 @@ MonoBehaviour:
   tag: Enemy
   partToRotate: {fileID: 9134974250818348864}
   turnSpeed: 10
+  Bulletdamage: 10
   bulletPrefab: {fileID: 5243041176559824100, guid: fcc94680d933adf4a89d42a834aa2b24, type: 3}
   bulletOrigin: {fileID: 9134909673395923606}
+  particules: {fileID: 2061646979693298586, guid: 67621accad7a07f4d9c73fa0aaa13de4, type: 3}
   upgradeHud: {fileID: 3941184062832006671}
   upgradeButton: {fileID: 4187545896379629309}
   buttonTurret: {fileID: 8916150195480195948, guid: a1128835e63c6934c8958cbab7f16710, type: 3}
@@ -1250,7 +1252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9140692358423799374}
   - component: {fileID: 9166758500549260284}
-  - component: {fileID: 9169399199704813666}
+  - component: {fileID: 786974106604285117}
   m_Layer: 2
   m_Name: Zone1
   m_TagString: Untagged
@@ -1285,7 +1287,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9169399199704813666
+--- !u!114 &786974106604285117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1294,12 +1296,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9138048229289957792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c40027982a518f4c877ed8b22c18b9d, type: 3}
+  m_Script: {fileID: 11500000, guid: f3fcfef89b4131b46b8591f99b2bfe67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twr: {fileID: 114231757648547274, guid: 997eda0f844715845a30121b4553e2fd, type: 3}
-  lockE: 0
-  curTarget: {fileID: 0}
+  turret: {fileID: 9001339707719926819}
 --- !u!1 &9138293957545964446
 GameObject:
   m_ObjectHideFlags: 0
