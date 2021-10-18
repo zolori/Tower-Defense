@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,11 +16,14 @@ public class Turret : MonoBehaviour
     public Transform bulletOrigin;
     private GameObject bullet;
 
+    private HUD _hud;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        //InvokeRepeating("UpdateTargetPos", 0f, 0.5f);
+        _hud = GameObject.FindGameObjectWithTag("UI").GetComponent<HUD>();
+
     }
 
     // Update is called once per frame
@@ -34,29 +38,6 @@ public class Turret : MonoBehaviour
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
-    void UpdateTargetPos()
-    {
-        //GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);  // stocke les tags des cibles
-        //GameObject nearestEnemy = null;    // ennemi qui sera ciblé
-        //float shortestDistance = Mathf.Infinity;    // initialise la distance la plu courte à "infini"
-
-        //foreach(GameObject enemy in enemies)   // boucle sur toutes les cibles
-        //{
-        //    float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);    // calcule la distance entre la tourelle et la cible
-
-        //    if (distanceToEnemy < shortestDistance) // si la nouvelle distance calculée est plus courte
-        //        shortestDistance = distanceToEnemy; // on remplace la distance la plus courte par la nouvelle valeur
-        //        nearestEnemy = enemy; // on initialise 
-        //}
-
-        //if(nearestEnemy != null && shortestDistance <= range)
-        //{
-        //    target = nearestEnemy.transform;
-        //    fireBullet();
-
-        //}
-    }
-
     public void fireBullet()
     {
         bullet = Instantiate(bulletPrefab, bulletOrigin.position, bulletPrefab.transform.rotation);
@@ -66,5 +47,11 @@ public class Turret : MonoBehaviour
     public void destroyBullet()
     {
         Destroy(bullet);
+    }
+
+    public void UpgradeMenu(Turret prmTurret)
+    {
+        Debug.Log("Done");
+        _hud.TurretMenu(prmTurret);
     }
 }

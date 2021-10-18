@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
 
     public int playerLife = 10;
     private const int PlayerMaxLife = 10;
-    public int playerMoney = 90000;
-    private int playerMaxMoney = 90000;
+    public int playerMoney = 90;
+    private int playerInitMoney = 90;
     private const int MobDrop = 10;
     private const int TurretBuy = 50;
     private const int TurretUpgrade = 100;
@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
     void reloadValues()
     {
         playerLife = PlayerMaxLife;
-        playerMoney = playerMaxMoney;
+        playerMoney = playerInitMoney;
     }
 
     public void AddMoney()

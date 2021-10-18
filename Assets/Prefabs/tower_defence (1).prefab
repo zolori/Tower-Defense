@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 7995985104780834322}
   - component: {fileID: 2320809092447782559}
   - component: {fileID: 2263755975028517321}
+  - component: {fileID: 1261503434}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -97,6 +98,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 7553567716213352580}
+--- !u!114 &1261503434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3126962733011360219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d5074b3f599cc4b8ffe25ebd9cc8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Turret: {fileID: 7553567716213352580}
 --- !u!1 &7847850338111232788
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7847850338111159464}
   - component: {fileID: 7553567716213352580}
+  - component: {fileID: 76600159063295455}
   m_Layer: 0
   m_Name: tower_defence (1)
   m_TagString: Untagged
@@ -233,6 +248,19 @@ MonoBehaviour:
   turnSpeed: 10
   bulletPrefab: {fileID: 5243041176559824100, guid: fcc94680d933adf4a89d42a834aa2b24, type: 3}
   bulletOrigin: {fileID: 845143356599765626}
+--- !u!65 &76600159063295455
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847850338111256330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.834142, y: 16.864391, z: 7.510354}
+  m_Center: {x: 0.12932007, y: 8.250646, z: -0.021008223}
 --- !u!1 &7847850338111397294
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class HUD : MonoBehaviour
     public GameObject TryAgainButton;
     public GameObject MenuButton;
     public GameObject MenuButtonWin;
+    public GameObject TurretPanel;
 
     // Start is called before the first frame update
     void Awake()
@@ -24,9 +26,15 @@ public class HUD : MonoBehaviour
         spawner = Spawner.GetComponent<spawner>();
     }
 
+    private void Start()
+    {
+        TurretPanel.SetActive(false);
+    }
+
     public void Reload()
     {
         GameManager.instance.Reload();
+        
     }
 
     public void getMenu()
@@ -38,4 +46,15 @@ public class HUD : MonoBehaviour
     {
         spawner.IsReady();
     }
+
+    public void TurretMenu(Turret prmTurret)
+    {
+        TurretPanel.SetActive(true);
+    }
+
+    public void TurretMenuExit()
+    {
+        TurretPanel.SetActive(false);
+    }
+    
 }

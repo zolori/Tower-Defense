@@ -42,22 +42,22 @@ public class cameraMovement : MonoBehaviour
 
         //Move with mouse
 
-        if (Input.mousePosition.x > Screen.width - edgeSize)
+        if (Input.mousePosition.x > Screen.width - edgeSize && transform.position.x <= 5)
         {
             transform.position += Vector3.right * moveSpeed * Time.deltaTime;
         }
 
-        if (Input.mousePosition.x < edgeSize)
+        if (Input.mousePosition.x < edgeSize && transform.position.x >= -10)
         {
             transform.position += Vector3.left * moveSpeed * Time.deltaTime;
         }
 
-        if (Input.mousePosition.y > Screen.height - edgeSize)
+        if (Input.mousePosition.y > Screen.height - edgeSize && transform.position.z <= -20)
         {
             transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
         }
 
-        if (Input.mousePosition.y < edgeSize)
+        if (Input.mousePosition.y < edgeSize && transform.position.z >= -50)
         {
             transform.position += Vector3.back * moveSpeed * Time.deltaTime;
         }

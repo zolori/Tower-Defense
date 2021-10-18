@@ -34,7 +34,7 @@ public class spawner : MonoBehaviour
 
     public void SummonWaves()
     {
-        if (_ready /*&& _wave < _maxWaveCount*/ && !_endGame)
+        if (_ready && _wave < _maxWaveCount && !_endGame)
         {
             for (int i = 0; i < _enemyFirstSpawnCount; i++)
             {
