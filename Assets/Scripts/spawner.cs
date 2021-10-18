@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +5,10 @@ using UnityEngine;
 public class spawner : MonoBehaviour
 {
     public GameObject enemy;
+    public GameObject gobelin;
     Transform _transform;
-    private Boolean _ready;
-    private Boolean _endGame;
+    private bool _ready;
+    private bool _endGame;
     private int _maxWaveCount = 10;
     private int _wave;
 
@@ -29,7 +29,12 @@ public class spawner : MonoBehaviour
 
     private void Spawn()
     {
-        Instantiate(enemy, _transform.position + new Vector3(-2, 0, 0), Quaternion.identity);
+        int r = Random.Range(0,101);
+
+        if (r < 20)
+            Instantiate(gobelin, _transform.position + new Vector3(-2, 0, 0), Quaternion.identity);
+        else
+            Instantiate(enemy, _transform.position + new Vector3(-2, 0, 0), Quaternion.identity);
     }
 
     public void SummonWaves()
@@ -56,7 +61,7 @@ public class spawner : MonoBehaviour
         return _maxWaveCount;
     }
 
-    public void SetEndGame(Boolean prmEndGameValue)
+    public void SetEndGame(bool prmEndGameValue)
     {
         _endGame = prmEndGameValue;
     }
