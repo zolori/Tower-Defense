@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 2320809092447782559}
   - component: {fileID: 2263755975028517321}
   - component: {fileID: 1261503434}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,8 +259,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.834142, y: 16.864391, z: 7.510354}
-  m_Center: {x: 0.12932007, y: 8.250646, z: -0.021008223}
+  m_Size: {x: 8.834142, y: 12.351552, z: 7.510354}
+  m_Center: {x: 0.12931988, y: 5.9942255, z: -0.021008223}
 --- !u!1 &7847850338111397294
 GameObject:
   m_ObjectHideFlags: 0
