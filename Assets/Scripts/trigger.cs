@@ -53,7 +53,6 @@ public class trigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("nb dans tableau : " + enemiesEntered.Count);
         enemiesEntered.Remove(other.GetComponent<Enemy>());
         areaTarget = null;
     }
