@@ -15,6 +15,7 @@ public class Turret : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletOrigin;
     private GameObject bullet;
+    public GameObject particules;
 
     public GameObject upgradeHud;
     public GameObject upgradeButton;
@@ -48,6 +49,8 @@ public class Turret : MonoBehaviour
     {
         bullet = Instantiate(bulletPrefab, bulletOrigin.position, bulletPrefab.transform.rotation);
         bullet.GetComponent<bulletBehaviour>().Target = target;
+
+        Instantiate(particules, bulletOrigin.position, bulletPrefab.transform.rotation);
     }
 
     public void destroyBullet()
