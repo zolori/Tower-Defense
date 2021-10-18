@@ -509,7 +509,7 @@ MonoBehaviour:
   maxLifePoint: 20
   sliderHealthBar: {fileID: 1657810979}
   enemyId: 
-  DeathParticle: {fileID: 3158264444849593624, guid: 715ba0a801bc0554bb6d5ea90e357fc6, type: 3}
+  DeathParticle: {fileID: 4236396496474588609, guid: 715ba0a801bc0554bb6d5ea90e357fc6, type: 3}
 --- !u!54 &-2250651682081917423
 Rigidbody:
   m_ObjectHideFlags: 0
