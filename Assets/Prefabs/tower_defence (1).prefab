@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 7995985104780834322}
   - component: {fileID: 2320809092447782559}
   - component: {fileID: 2263755975028517321}
-  - component: {fileID: 1261503434}
   m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
@@ -98,19 +97,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 7553567716213352580}
---- !u!114 &1261503434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3126962733011360219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d5074b3f599cc4b8ffe25ebd9cc8c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Turret: {fileID: 7553567716213352580}
 --- !u!1 &7847850338111232788
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,6 +234,7 @@ MonoBehaviour:
   turnSpeed: 10
   bulletPrefab: {fileID: 5243041176559824100, guid: fcc94680d933adf4a89d42a834aa2b24, type: 3}
   bulletOrigin: {fileID: 845143356599765626}
+  particules: {fileID: 2061646979693298586, guid: 67621accad7a07f4d9c73fa0aaa13de4, type: 3}
 --- !u!65 &76600159063295455
 BoxCollider:
   m_ObjectHideFlags: 0
