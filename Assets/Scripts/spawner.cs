@@ -32,9 +32,9 @@ public class spawner : MonoBehaviour
         int r = Random.Range(0,101);
 
         if (r < 20)
-            Instantiate(gobelin, _transform.position + new Vector3(-2, 0, 0), Quaternion.identity);
+            Instantiate(gobelin, _transform.position + new Vector3(-2, 0, 0), _transform.rotation);
         else
-            Instantiate(enemy, _transform.position + new Vector3(-2, 0, 0), Quaternion.identity);
+            Instantiate(enemy, _transform.position + new Vector3(-2, 0, 0), _transform.rotation);
     }
 
     public void SummonWaves()

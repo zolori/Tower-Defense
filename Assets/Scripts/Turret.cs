@@ -16,7 +16,9 @@ public class Turret : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletOrigin;
     private GameObject bullet;
-    public GameObject particules;
+    public GameObject fireParticules;
+    public GameObject lvlUpParticules;
+    public GameObject lvlUpParticules2;
 
     public GameObject upgradeHud;
     public GameObject upgradeButton;
@@ -52,7 +54,7 @@ public class Turret : MonoBehaviour
         bullet.GetComponent<bulletBehaviour>().Target = target;
         bullet.GetComponent<bulletBehaviour>().BulletDamage = Bulletdamage;
 
-        Instantiate(particules, bulletOrigin.position, bulletPrefab.transform.rotation);
+        Instantiate(fireParticules, bulletOrigin.position, bulletPrefab.transform.rotation);
     }
 
     public void destroyBullet()
@@ -90,6 +92,8 @@ public class Turret : MonoBehaviour
 
     public void UTurret(GameObject prmGameObject)
     {
+        Instantiate(lvlUpParticules, prmGameObject.transform.position, Quaternion.Euler(new Vector3(-90, 0,0)));
+        Instantiate(lvlUpParticules2, prmGameObject.transform.position, Quaternion.Euler(new Vector3(-90, 0,0)));
         Instantiate(upgradeTurret, prmGameObject.transform.position, prmGameObject.transform.rotation);
         UpgradeMenuOff();
         Destroy(prmGameObject);
@@ -97,9 +101,11 @@ public class Turret : MonoBehaviour
 
     public void SellTurret(GameObject prmGameObject)
     {
+        Instantiate(lvlUpParticules, prmGameObject.transform.position, Quaternion.Euler(new Vector3(-90, 0,0)));
+        Instantiate(lvlUpParticules2, prmGameObject.transform.position, Quaternion.Euler(new Vector3(-90, 0,0)));
         Instantiate(buttonTurret, prmGameObject.transform.position - new Vector3(0, -0.5f, 0),
             buttonTurret.transform.rotation);
-        GameManager.instance.playerMoney += GameManager.instance.TurretRefund;
+        Refund();
         UpgradeMenuOff();
         Destroy(prmGameObject);
     }

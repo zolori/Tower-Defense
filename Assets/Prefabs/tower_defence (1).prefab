@@ -887,9 +887,12 @@ MonoBehaviour:
   tag: Enemy
   partToRotate: {fileID: 7847850338111086902}
   turnSpeed: 10
+  Bulletdamage: 5
   bulletPrefab: {fileID: 5243041176559824100, guid: fcc94680d933adf4a89d42a834aa2b24, type: 3}
   bulletOrigin: {fileID: 845143356599765626}
-  particules: {fileID: 2061646979693298586, guid: 67621accad7a07f4d9c73fa0aaa13de4, type: 3}
+  fireParticules: {fileID: 5093826266711331238, guid: c10581a454e29dd4faf649e29d6868c6, type: 3}
+  lvlUpParticules: {fileID: 6140858641339863818, guid: 17a7f75fc465f504695f30f3bc33ad8b, type: 3}
+  lvlUpParticules2: {fileID: 1184951938409530463, guid: 8620ef945b5f72a458e1531560c51d26, type: 3}
   upgradeHud: {fileID: 2870312605086114416}
   upgradeButton: {fileID: 7204433142455121592}
   buttonTurret: {fileID: 8916150195480195948, guid: a1128835e63c6934c8958cbab7f16710, type: 3}
@@ -905,8 +908,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.834142, y: 12.351552, z: 7.510354}
-  m_Center: {x: 0.12931988, y: 5.9942255, z: -0.021008223}
+  m_Size: {x: 6.8279953, y: 12.351552, z: 5.624753}
+  m_Center: {x: -0.14940095, y: 5.9942255, z: 0.032715715}
 --- !u!1 &7847850338111397294
 GameObject:
   m_ObjectHideFlags: 0

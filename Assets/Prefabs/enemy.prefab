@@ -398,8 +398,6 @@ GameObject:
   - component: {fileID: 4633178997634542288}
   - component: {fileID: -2250651682081917423}
   - component: {fileID: 2116525995}
-  - component: {fileID: 2116525996}
-  - component: {fileID: 2116526003}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Enemy
@@ -508,8 +506,9 @@ MonoBehaviour:
   lifePoint: 20
   maxLifePoint: 20
   sliderHealthBar: {fileID: 1657810979}
-  enemyId: 
+  enemyId: 1
   DeathParticle: {fileID: 4236396496474588609, guid: 715ba0a801bc0554bb6d5ea90e357fc6, type: 3}
+  MoveParticle: {fileID: 1877096994725842257, guid: aef636c8e1ba7d741941172530a72517, type: 3}
 --- !u!54 &-2250651682081917423
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -539,37 +538,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.45878696, y: 0.697812, z: 1.2696438}
   m_Center: {x: 0.008800983, y: 0.34174016, z: 0.13146877}
---- !u!95 &2116525996
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6231076586368294240}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 0b54733d5329ad34db9d1e5fe04739e6, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &2116526003
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6231076586368294240}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 427f72e3e110e5145bf4956336b40f6f, type: 3}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0

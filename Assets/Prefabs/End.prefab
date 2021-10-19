@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HUD: {fileID: 0}
   hud: {fileID: 0}
+  OnTriggerEffect: {fileID: 8236197060916682734, guid: 9439579c3076a77419ef26dec1606dec, type: 3}
 --- !u!54 &1843849641
 Rigidbody:
   m_ObjectHideFlags: 0

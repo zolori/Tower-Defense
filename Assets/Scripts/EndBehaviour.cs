@@ -10,15 +10,8 @@ public class EndBehaviour : MonoBehaviour
     public GameObject HUD;
     public HUD hud;
 
-    // private TMP_Text moneyText = hud.moneyText;
-    // private TMP_Text waveText = hud.waveText;
-    // private spawner spawner = hud.spawner;
-    // private TMP_Text winScreen = hud.winScreen;
-    // private TMP_Text loseScreen = hud.loseScreen;
-    // private TMP_Text lifeText = hud.lifeText;
-    // private GameObject TryAgainButton = hud.TryAgainButton;
-    // private GameObject MenuButton = hud.MenuButton;
-    // private GameObject MenuButtonWin = hud.MenuButtonWin;
+    public GameObject OnTriggerEffect;
+    
     private short levelId = 1;
 
     private void Start()
@@ -55,6 +48,7 @@ public class EndBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Enemy enemy = other.GetComponent<Enemy>();
+            Instantiate(OnTriggerEffect, new Vector3(enemy.transform.position.x, 3, enemy.transform.position.z), enemy.transform.rotation);
             enemy.Die();
 
             if (GameManager.instance.playerLife <= 0)
