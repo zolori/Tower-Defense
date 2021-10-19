@@ -13,9 +13,10 @@ public class EndBehaviour : MonoBehaviour
 
     public GameObject OnTriggerEffect;
     public int levelId;
-    public AudioSource enemyEntered;
-    public AudioSource won;
+    public AudioSource audioSource;
     public AudioClip winClip;
+    public AudioClip loseClip;
+    public AudioClip foumClip;
 
     public bool winSound = true;
 
@@ -24,8 +25,7 @@ public class EndBehaviour : MonoBehaviour
         HUD = GameObject.Find("HUD");
         hud = HUD.GetComponent<HUD>();
 
-        enemyEntered = GetComponent<AudioSource>();
-        won = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
 
         levelId = SceneManager.GetActiveScene().buildIndex;
         hud.winScreen.enabled = false;
@@ -39,7 +39,7 @@ public class EndBehaviour : MonoBehaviour
     {
         UpdateText();
 
-        if (hud.spawner.GetWave() == hud.spawner.GetMaxWave() && GameObject.FindGameObjectWithTag("Enemy") == null && GameManager.instance.playerLife > 0)
+        if (hud.spawner.GetWave() == hud.spawner.GetMaxWave() && GameObject.FindGameObjectWithTag("Enemy") == null && GameManager.instance.playerLife >= 0)
         {
             //win
             levelId = SceneManager.GetActiveScene().buildIndex;
@@ -52,8 +52,8 @@ public class EndBehaviour : MonoBehaviour
             if (winSound)
             {
                 winSound = false;
-                won.clip = winClip;
-                won.Play();
+                audioSource.clip = winClip;
+                audioSource.Play();
             }
         }
     }
@@ -65,20 +65,27 @@ public class EndBehaviour : MonoBehaviour
             Enemy enemy = other.GetComponent<Enemy>();
             Instantiate(OnTriggerEffect, new Vector3(enemy.transform.position.x, GameManager.instance.levelHeight, enemy.transform.position.z), enemy.transform.rotation);
             enemy.Die();
-            won.Play();
 
-            if (GameManager.instance.playerLife <= 0)
+            if (GameManager.instance.playerLife <= 1)
             {
                 //gameover
                 Debug.Log("lose");
+                if (GameManager.instance.playerLife == 1)
+                {
+                    GameManager.instance.playerLife--;
+                    audioSource.PlayOneShot(loseClip);
+                }
+                
                 hud.loseScreen.enabled = true;
                 hud.spawner.SetEndGame(true);
                 hud.TryAgainButton.SetActive(true);
                 hud.MenuButton.SetActive(true);
+                
             }
             else
             {
                 GameManager.instance.playerLife--;
+                audioSource.PlayOneShot(foumClip);
             }
         }
     }
