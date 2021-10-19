@@ -18,6 +18,7 @@ public class spawner : MonoBehaviour
     void Start()
     {
         _transform = GetComponent<Transform>();
+        GameManager.instance.CheckLevelHeight();
     }
 
     public void IsReady()

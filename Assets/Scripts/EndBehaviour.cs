@@ -18,9 +18,7 @@ public class EndBehaviour : MonoBehaviour
     {
         HUD = GameObject.Find("HUD");
         hud = HUD.GetComponent<HUD>();
-
-        levelId = SceneManager.GetActiveScene().buildIndex;
-
+        
         hud.winScreen.enabled = false;
         hud.loseScreen.enabled = false;
         hud.TryAgainButton.SetActive(false);
@@ -35,12 +33,11 @@ public class EndBehaviour : MonoBehaviour
         if (hud.spawner.GetWave() == hud.spawner.GetMaxWave() && GameObject.FindGameObjectWithTag("Enemy") == null && GameManager.instance.playerLife > 0)
         {
             //win
-
+            levelId = SceneManager.GetActiveScene().buildIndex;
             GameManager.instance.LastCompletedLevel(levelId);
             hud.winScreen.enabled = true;
             hud.spawner.SetEndGame(true);
             hud.MenuButtonWin.SetActive(true);
-            GameManager.instance.LastCompletedLevel(levelId);
         }
     }
 
