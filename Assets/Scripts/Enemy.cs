@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
 
     private void Stars()
     {
-        Instantiate(MoveParticle, new Vector3(transform.position.x, 3, transform.position.z), transform.rotation);
+        Instantiate(MoveParticle, new Vector3(transform.position.x, GameManager.instance.levelHeight, transform.position.z), transform.rotation);
     }
 
     public void Damaged(int prmDamage)
@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
         if (lifePoint <= 0)
         {
             GameManager.instance.AddMoney();
-            Instantiate(DeathParticle, new Vector3(transform.position.x, 3, transform.position.z), transform.rotation);
+            Instantiate(DeathParticle, new Vector3(transform.position.x, GameManager.instance.levelHeight, transform.position.z), transform.rotation);
             Die();
         }
     }

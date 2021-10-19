@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EndBehaviour : MonoBehaviour
@@ -11,14 +12,14 @@ public class EndBehaviour : MonoBehaviour
     public HUD hud;
 
     public GameObject OnTriggerEffect;
+    public int levelId;
     
-    private short levelId = 1;
-
     private void Start()
     {
         HUD = GameObject.Find("HUD");
         hud = HUD.GetComponent<HUD>();
 
+        levelId = SceneManager.GetActiveScene().buildIndex;
 
         hud.winScreen.enabled = false;
         hud.loseScreen.enabled = false;
@@ -34,11 +35,12 @@ public class EndBehaviour : MonoBehaviour
         if (hud.spawner.GetWave() == hud.spawner.GetMaxWave() && GameObject.FindGameObjectWithTag("Enemy") == null && GameManager.instance.playerLife > 0)
         {
             //win
-            
+
+            GameManager.instance.LastCompletedLevel(levelId);
             hud.winScreen.enabled = true;
             hud.spawner.SetEndGame(true);
             hud.MenuButtonWin.SetActive(true);
-            GameManager.instance.CompletedLvl(levelId);
+            GameManager.instance.LastCompletedLevel(levelId);
         }
     }
 
@@ -48,7 +50,7 @@ public class EndBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Enemy enemy = other.GetComponent<Enemy>();
-            Instantiate(OnTriggerEffect, new Vector3(enemy.transform.position.x, 3, enemy.transform.position.z), enemy.transform.rotation);
+            Instantiate(OnTriggerEffect, new Vector3(enemy.transform.position.x, GameManager.instance.levelHeight, enemy.transform.position.z), enemy.transform.rotation);
             enemy.Die();
 
             if (GameManager.instance.playerLife <= 0)

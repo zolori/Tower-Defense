@@ -18,7 +18,9 @@ public class MainMenu : MonoBehaviour
     {
 
         Level_One.SetActive(false);
+        
         Level_Two.SetActive(false);
+        
         Back.SetActive(false);
 
     }
@@ -37,7 +39,11 @@ public class MainMenu : MonoBehaviour
     {
         
         Level_One.SetActive(true);
-        Level_Two.SetActive(true);
+        if (GameManager.instance.lastCompletedLevel == 2)
+        {
+            Level_Two.SetActive(true);
+        }
+        
         Back.SetActive(true);
         Play.SetActive(false);
         Quit.SetActive(false);

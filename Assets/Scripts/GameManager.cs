@@ -7,13 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameObject lvl1Btn;
-    public GameObject lvl2Btn;
-    public static short lastCompletedLevel;
-
-    public Turret upgradeTurret;
-    public Turret baseTurret;
-    public GameObject buttonTurret;
+    public int lastCompletedLevel;
 
     public int playerLife = 10;
     private const int PlayerMaxLife = 10;
@@ -25,7 +19,9 @@ public class GameManager : MonoBehaviour
     public int TurretRefundUpgrade = 70;
     public int turretUpgrade = 100;
 
-    public bool IsOpen = false;
+    public int levelHeight;
+
+    public bool IsOpen;
 
     // Start is called before the first frame update
     void Start()
@@ -41,11 +37,16 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-    }
 
-    public void CompletedLvl(short prmIndex)
-    {
-        lastCompletedLevel = prmIndex;
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            levelHeight = 3;
+        }
+        else
+        {
+            levelHeight = 10;
+        }
+        
     }
 
     public void loadLevel(int prmNum)
@@ -85,11 +86,12 @@ public class GameManager : MonoBehaviour
             playerMoney -= TurretBuy;
             return true;
         }
-        else
-        {
-            return false;
-        }
+
+        return false;
     }
-    
-    
+
+    public void LastCompletedLevel(int prmLevelId)
+    {
+        lastCompletedLevel = prmLevelId;
+    }
 }
