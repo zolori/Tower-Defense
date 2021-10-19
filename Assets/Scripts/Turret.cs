@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class Turret : MonoBehaviour
 {
@@ -131,7 +132,7 @@ public class Turret : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (GameManager.instance.IsOpen == false)
+        if (GameManager.instance.IsOpen == false && !EventSystem.current.IsPointerOverGameObject())
         {
             UpgradeMenuOn();
         }

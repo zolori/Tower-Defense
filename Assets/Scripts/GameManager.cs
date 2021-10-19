@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public int lastCompletedLevel;
+    public static int lastCompletedLevel;
 
     public int playerLife = 10;
     private const int PlayerMaxLife = 10;
@@ -38,6 +38,12 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
+        CheckLevelHeight();
+        
+    }
+
+    public void CheckLevelHeight()
+    {
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             levelHeight = 3;
@@ -46,7 +52,6 @@ public class GameManager : MonoBehaviour
         {
             levelHeight = 10;
         }
-        
     }
 
     public void loadLevel(int prmNum)

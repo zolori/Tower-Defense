@@ -43,7 +43,7 @@ public class MainMenu : MonoBehaviour
     {
         
         Level_One.SetActive(true);
-        if (GameManager.instance.lastCompletedLevel == 2)
+        if (GameManager.lastCompletedLevel == 1)
         {
             Level_Two.SetActive(true);
         }
