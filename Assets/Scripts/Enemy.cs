@@ -17,8 +17,6 @@ public class Enemy : MonoBehaviour
 
     public GameObject MoveParticle;
 
-    public int level;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -39,17 +37,7 @@ public class Enemy : MonoBehaviour
 
     private void Stars()
     {
-
-        if (SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            level = 3;
-        }
-        else
-        {
-            level = 6;
-        }
-
-        Instantiate(MoveParticle, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.rotation);
+        Instantiate(MoveParticle, new Vector3(transform.position.x, GameManager.instance.levelHeight, transform.position.z), transform.rotation);
     }
 
     public void Damaged(int prmDamage)
@@ -59,7 +47,7 @@ public class Enemy : MonoBehaviour
         if (lifePoint <= 0)
         {
             GameManager.instance.AddMoney();
-            Instantiate(DeathParticle, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.rotation);
+            Instantiate(DeathParticle, new Vector3(transform.position.x, GameManager.instance.levelHeight, transform.position.z), transform.rotation);
             Die();
         }
     }
