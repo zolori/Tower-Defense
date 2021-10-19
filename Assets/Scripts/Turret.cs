@@ -24,7 +24,8 @@ public class Turret : MonoBehaviour
     public GameObject upgradeButton;
     public GameObject buttonTurret;
     public Turret upgradeTurret;
-    public AudioSource source;
+    public AudioSource tir;
+    public AudioSource spawn;
 
 
 
@@ -36,7 +37,9 @@ public class Turret : MonoBehaviour
         {
             upgradeButton.SetActive(false);
         }
-        source = GetComponent<AudioSource>();
+        tir = GetComponent<AudioSource>();
+        spawn = GetComponent<AudioSource>();
+        spawn.Play();
     }
 
     // Update is called once per frame
@@ -58,7 +61,7 @@ public class Turret : MonoBehaviour
         bullet.GetComponent<bulletBehaviour>().BulletDamage = Bulletdamage;
 
         Instantiate(fireParticules, bulletOrigin.position, bulletPrefab.transform.rotation);
-        source.Play();
+        tir.Play();
     }
 
     public void destroyBullet()

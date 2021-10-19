@@ -17,6 +17,7 @@ public class HUD : MonoBehaviour
     public GameObject TryAgainButton;
     public GameObject MenuButton;
     public GameObject MenuButtonWin;
+    public AudioSource source;
 
 
     // Start is called before the first frame update
@@ -28,20 +29,29 @@ public class HUD : MonoBehaviour
 
     private void Start()
     {
+        source = GetComponent<AudioSource>();
     }
 
     public void Reload()
     {
         GameManager.instance.Reload();
+        playSound();
     }
 
     public void getMenu()
     {
         GameManager.instance.loadMenu();
+        playSound();
     }
 
     public void Ready()
     {
         spawner.IsReady();
+        playSound();
+    }
+
+    public void playSound()
+    {
+        source.Play();
     }
 }

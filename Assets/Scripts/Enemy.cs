@@ -14,12 +14,12 @@ public class Enemy : MonoBehaviour
     public HealthBar sliderHealthBar;
     public int enemyId;
     public GameObject DeathParticle;
-
     public GameObject MoveParticle;
+    public AudioSource source;
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
         _end = GameObject.FindWithTag("Finish");
         navMeshAgent.destination = _end.transform.position;
@@ -28,6 +28,9 @@ public class Enemy : MonoBehaviour
         {
             InvokeRepeating(nameof(Stars), 0f, 0.25f);
         }
+
+        InvokeRepeating(nameof(walkSound), 0f, 0.5f);
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,6 +41,11 @@ public class Enemy : MonoBehaviour
     private void Stars()
     {
         Instantiate(MoveParticle, new Vector3(transform.position.x, GameManager.instance.levelHeight, transform.position.z), transform.rotation);
+    }
+
+    private void walkSound()
+    {
+        source.Play();
     }
 
     public void Damaged(int prmDamage)

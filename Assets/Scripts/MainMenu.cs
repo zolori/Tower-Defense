@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     public GameObject Play;
     public GameObject Quit;
     public GameObject Back;
+    public AudioSource source;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,8 @@ public class MainMenu : MonoBehaviour
         
         Back.SetActive(false);
 
+        source = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -33,6 +36,7 @@ public class MainMenu : MonoBehaviour
     public void LoadLvl(int prmLvlNumber)
     {
         GameManager.instance.loadLevel(prmLvlNumber);
+        playSound();
     }
 
     public void OnPlayClick()
@@ -47,7 +51,8 @@ public class MainMenu : MonoBehaviour
         Back.SetActive(true);
         Play.SetActive(false);
         Quit.SetActive(false);
-        
+        playSound();
+
     }
 
     public void OnQuitClick()
@@ -55,7 +60,8 @@ public class MainMenu : MonoBehaviour
         
         Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
-        
+        playSound();
+
     }
 
     public void OnBackClick()
@@ -65,7 +71,11 @@ public class MainMenu : MonoBehaviour
         Back.SetActive(false);
         Play.SetActive(true);
         Quit.SetActive(true);
-        
-        
+        playSound();
+    }
+
+    public void playSound()
+    {
+        source.Play();
     }
 }

@@ -4403,34 +4403,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3201087287526554975, guid: 9f8df456bdb31ab4694ba4609b8077bf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3201087287526554975, guid: 9f8df456bdb31ab4694ba4609b8077bf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3201087287526554975, guid: 9f8df456bdb31ab4694ba4609b8077bf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1038551137}
-    - target: {fileID: 3201087287526554975, guid: 9f8df456bdb31ab4694ba4609b8077bf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3201087287526554975, guid: 9f8df456bdb31ab4694ba4609b8077bf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpgradeTurret
-      objectReference: {fileID: 0}
-    - target: {fileID: 3201087287526554975, guid: 9f8df456bdb31ab4694ba4609b8077bf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3201087287526554975, guid: 9f8df456bdb31ab4694ba4609b8077bf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 7851484408912793098, guid: 9f8df456bdb31ab4694ba4609b8077bf, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -37736,17 +37708,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f58c015ddf9b4245861b4bbdde94b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lvl1Btn: {fileID: 0}
-  lvl2Btn: {fileID: 0}
-  upgradeTurret: {fileID: 0}
-  baseTurret: {fileID: 0}
-  buttonTurret: {fileID: 0}
+  lastCompletedLevel: 0
   playerLife: 10
   playerMoney: 900
   TurretBuy: 50
   TurretRefund: 30
   TurretRefundUpgrade: 70
   turretUpgrade: 100
+  levelHeight: 0
   IsOpen: 0
 --- !u!1001 &1039475743
 PrefabInstance:
@@ -50473,6 +50442,24 @@ Transform:
   m_Father: {fileID: 1293973642}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1402831885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4983894171684566880, guid: 9f8df456bdb31ab4694ba4609b8077bf, type: 3}
+  m_PrefabInstance: {fileID: 137800083}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1402831886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402831885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8581d724bf1ee1745a46871d0c38b10f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 0}
 --- !u!1001 &1402954354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76479,6 +76466,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1256032007}
     m_Modifications:
+    - target: {fileID: 416564670339533177, guid: 3cebe4eb153cf1342bd9315db95bb42d, type: 3}
+      propertyPath: winClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c0cabce778ad54792bba3a0ca6765417, type: 3}
     - target: {fileID: 4300309434514597384, guid: 3cebe4eb153cf1342bd9315db95bb42d, type: 3}
       propertyPath: m_RootOrder
       value: 5

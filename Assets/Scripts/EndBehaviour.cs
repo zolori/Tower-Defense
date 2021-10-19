@@ -13,11 +13,19 @@ public class EndBehaviour : MonoBehaviour
 
     public GameObject OnTriggerEffect;
     public int levelId;
-    
+    public AudioSource enemyEntered;
+    public AudioSource won;
+    public AudioClip winClip;
+
+    public bool winSound = true;
+
     private void Start()
     {
         HUD = GameObject.Find("HUD");
         hud = HUD.GetComponent<HUD>();
+
+        enemyEntered = GetComponent<AudioSource>();
+        won = GetComponent<AudioSource>();
 
         levelId = SceneManager.GetActiveScene().buildIndex;
 
@@ -35,15 +43,21 @@ public class EndBehaviour : MonoBehaviour
         if (hud.spawner.GetWave() == hud.spawner.GetMaxWave() && GameObject.FindGameObjectWithTag("Enemy") == null && GameManager.instance.playerLife > 0)
         {
             //win
-
             GameManager.instance.LastCompletedLevel(levelId);
             hud.winScreen.enabled = true;
             hud.spawner.SetEndGame(true);
             hud.MenuButtonWin.SetActive(true);
             GameManager.instance.LastCompletedLevel(levelId);
+            if (winSound)
+            {
+                winSound = false;
+                won.clip = winClip;
+                won.Play();
+            }
+
+
         }
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -52,6 +66,7 @@ public class EndBehaviour : MonoBehaviour
             Enemy enemy = other.GetComponent<Enemy>();
             Instantiate(OnTriggerEffect, new Vector3(enemy.transform.position.x, GameManager.instance.levelHeight, enemy.transform.position.z), enemy.transform.rotation);
             enemy.Die();
+            won.Play();
 
             if (GameManager.instance.playerLife <= 0)
             {
@@ -68,10 +83,8 @@ public class EndBehaviour : MonoBehaviour
             }
         }
     }
-    
-        
 
-        void UpdateText()
+    void UpdateText()
     {
         hud.moneyText.SetText("Money : " + GameManager.instance.playerMoney);
         hud.waveText.SetText("Wave : " + hud.spawner.GetWave());
