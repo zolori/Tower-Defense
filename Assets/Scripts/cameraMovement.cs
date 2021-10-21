@@ -45,6 +45,11 @@ public class cameraMovement : MonoBehaviour
             GameObject.FindWithTag("UI").GetComponent<HUD>().Ready();
         }
 
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            GameManager.instance.Reload();
+        }
+
         //Move with mouse
 
         if (Input.mousePosition.x > Screen.width - edgeSize && transform.position.x <= 5)
