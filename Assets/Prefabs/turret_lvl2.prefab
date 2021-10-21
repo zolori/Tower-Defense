@@ -1187,7 +1187,13 @@ MonoBehaviour:
   upgradeButton: {fileID: 4187545896379629309}
   buttonTurret: {fileID: 8916150195480195948, guid: a1128835e63c6934c8958cbab7f16710, type: 3}
   upgradeTurret: {fileID: 7553567716213352580, guid: 39e352c60401e354aa5bf4c39aa95b5f, type: 3}
-  source: {fileID: 2157151559065290156}
+  tir: {fileID: 2157151559065290156}
+  spawn: {fileID: 8300000, guid: 914a4a2a124d040df96bf13308aadc2e, type: 3}
+  shoot_1: {fileID: 8300000, guid: 72cd3e9bc29af4c57a62e91883166b7b, type: 3}
+  shoot_2: {fileID: 8300000, guid: 4ed873530f4192a4a95364f445c7cc5f, type: 3}
+  shoot_3: {fileID: 8300000, guid: bbee4eb43a852b64198440b4a3cd79cc, type: 3}
+  shoot_4: {fileID: 8300000, guid: b47372004949c2d41b70649ae86d3504, type: 3}
+  plop: {fileID: 8300000, guid: 54b23f1452679449bb996c6fea252473, type: 3}
 --- !u!65 &205590154
 BoxCollider:
   m_ObjectHideFlags: 0

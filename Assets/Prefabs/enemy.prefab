@@ -511,6 +511,10 @@ MonoBehaviour:
   DeathParticle: {fileID: 4236396496474588609, guid: 715ba0a801bc0554bb6d5ea90e357fc6, type: 3}
   MoveParticle: {fileID: 1877096994725842257, guid: aef636c8e1ba7d741941172530a72517, type: 3}
   source: {fileID: -8575051772218902734}
+  walk_1: {fileID: 8300000, guid: 05a08dd4ee0c046a6b56466d5c9aa9b8, type: 3}
+  walk_2: {fileID: 8300000, guid: bc1c11a60c94e439d84d64c56fdd354f, type: 3}
+  walk_3: {fileID: 8300000, guid: f7bff2a24d7d64eb296a8133060bd3e9, type: 3}
+  walk_4: {fileID: 8300000, guid: f626dafe2c3e045cd852e86532182f70, type: 3}
 --- !u!54 &-2250651682081917423
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
@@ -8,8 +5,6 @@ using UnityEngine.EventSystems;
 public class Turret : MonoBehaviour
 {
     public Enemy target;
-    public float range = 50f;
-    public string tag = "Enemy";
     public Transform partToRotate;
     public float turnSpeed = 10f;
     public int Bulletdamage = 5;
@@ -26,9 +21,12 @@ public class Turret : MonoBehaviour
     public GameObject buttonTurret;
     public Turret upgradeTurret;
     public AudioSource tir;
-    public AudioSource spawn;
-
-
+    public AudioClip spawn;
+    public AudioClip shoot_1;
+    public AudioClip shoot_2;
+    public AudioClip shoot_3;
+    public AudioClip shoot_4;
+    public AudioClip plop;
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +37,7 @@ public class Turret : MonoBehaviour
             upgradeButton.SetActive(false);
         }
         tir = GetComponent<AudioSource>();
-        spawn = GetComponent<AudioSource>();
-        spawn.Play();
+        tir.PlayOneShot(spawn);
     }
 
     // Update is called once per frame
@@ -62,7 +59,26 @@ public class Turret : MonoBehaviour
         bullet.GetComponent<bulletBehaviour>().BulletDamage = Bulletdamage;
 
         Instantiate(fireParticules, bulletOrigin.position, bulletPrefab.transform.rotation);
-        tir.Play();
+
+        int r = Random.Range(1, 5);
+        switch(r)
+        {
+            case 1:
+                tir.PlayOneShot(shoot_1);
+                break;
+            case 2:
+                tir.PlayOneShot(shoot_2);
+                break;
+            case 3:
+                tir.PlayOneShot(shoot_3);
+                break;
+            case 4:
+                tir.PlayOneShot(shoot_4);
+                break;
+            default:
+                tir.PlayOneShot(plop);
+                break;
+        }
     }
 
     public void destroyBullet()

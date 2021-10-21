@@ -16,6 +16,10 @@ public class Enemy : MonoBehaviour
     public GameObject DeathParticle;
     public GameObject MoveParticle;
     public AudioSource source;
+    public AudioClip walk_1;
+    public AudioClip walk_2;
+    public AudioClip walk_3;
+    public AudioClip walk_4;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +32,9 @@ public class Enemy : MonoBehaviour
         {
             InvokeRepeating(nameof(Stars), 0f, 0.25f);
         }
+        else
+            InvokeRepeating(nameof(walkSound), 0f, 0.5f);
 
-        InvokeRepeating(nameof(walkSound), 0f, 0.5f);
         source = GetComponent<AudioSource>();
     }
 
@@ -45,7 +50,25 @@ public class Enemy : MonoBehaviour
 
     private void walkSound()
     {
-        source.Play();
+        int r = Random.Range(1, 5);
+        switch (r)
+        {
+            case 1:
+                source.PlayOneShot(walk_1);
+                break;
+            case 2:
+                source.PlayOneShot(walk_2);
+                break;
+            case 3:
+                source.PlayOneShot(walk_3);
+                break;
+            case 4:
+                source.PlayOneShot(walk_4);
+                break;
+            default:
+                source.PlayOneShot(walk_1);
+                break;
+        }
     }
 
     public void Damaged(int prmDamage)
