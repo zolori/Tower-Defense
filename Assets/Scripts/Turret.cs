@@ -110,6 +110,8 @@ public class Turret : MonoBehaviour
         if (GameManager.instance.playerMoney >= GameManager.instance.turretUpgrade)
         {
             GameManager.instance.playerMoney -= GameManager.instance.turretUpgrade;
+            Debug.Log(GameManager.instance.turretUpgrade);
+            Debug.Log(GameManager.instance.playerMoney);
             UTurret(prmGameObject);
         }
     }

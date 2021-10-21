@@ -39,7 +39,7 @@ public class EndBehaviour : MonoBehaviour
     {
         UpdateText();
 
-        if (hud.spawner.GetWave() == hud.spawner.GetMaxWave() && GameObject.FindGameObjectWithTag("Enemy") == null && GameManager.instance.playerLife >= 0)
+        if (hud.spawner.GetWave() == hud.spawner.GetMaxWave() && GameObject.FindGameObjectWithTag("Enemy") == null && GameManager.instance.playerLife > 0)
         {
             //win
             levelId = SceneManager.GetActiveScene().buildIndex;

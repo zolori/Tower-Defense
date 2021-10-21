@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour
     private int MobDrop = 10;
     public int TurretBuy = 50;
     public int TurretRefund = 30;
-    public int TurretRefundUpgrade = 70;
-    public int turretUpgrade = 100;
+    public int TurretRefundUpgrade = 100;
+    public int turretUpgrade = 150;
 
     public int levelHeight;
 

@@ -12,7 +12,7 @@ public class spawner : MonoBehaviour
     private int _maxWaveCount = 10;
     private int _wave;
 
-    private int _enemyFirstSpawnCount = 3;
+    private double _enemyFirstSpawnCount = 3;
 
 
     void Start()
@@ -48,7 +48,7 @@ public class spawner : MonoBehaviour
             }
 
             _wave++;
-            _enemyFirstSpawnCount += 3;
+            _enemyFirstSpawnCount = _enemyFirstSpawnCount * 1.40 +2;
         }
     }
 

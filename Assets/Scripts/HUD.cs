@@ -14,6 +14,7 @@ public class HUD : MonoBehaviour
     public TMP_Text loseScreen;
     public TMP_Text lifeText;
     public TMP_Text EnemyLeftText;
+    public TMP_Text ReadyText;
     public GameObject TryAgainButton;
     public GameObject MenuButton;
     public GameObject MenuButtonWin;
@@ -30,6 +31,18 @@ public class HUD : MonoBehaviour
     private void Start()
     {
         source = GetComponent<AudioSource>();
+    }
+
+    private void Update()
+    {
+        if (GameObject.FindGameObjectWithTag("Enemy") == null)
+        {
+            ReadyText.enabled = true;
+        }
+        else
+        {
+            ReadyText.enabled = false;
+        }
     }
 
     public void Reload()

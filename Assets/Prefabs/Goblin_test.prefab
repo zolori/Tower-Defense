@@ -1171,7 +1171,6 @@ GameObject:
   - component: {fileID: 6191931401484744158}
   - component: {fileID: 6149956372922022336}
   - component: {fileID: 6105224814948001257}
-  - component: {fileID: 6105224814948001263}
   - component: {fileID: 6105224814948001262}
   - component: {fileID: 6105224814948001260}
   - component: {fileID: 6105224814948001256}
@@ -1249,21 +1248,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!111 &6105224814948001263
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6106428734044205900}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 1e85a4bc085ebaa48b9ca17dc63b9364, type: 3}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!23 &6105224814948001262
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1317,8 +1301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145d0218f5ef8244b6a9ff3ee882ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifePoint: 30
-  maxLifePoint: 30
+  lifePoint: 40
+  maxLifePoint: 40
   sliderHealthBar: {fileID: 4764062056287708378}
   enemyId: 2
   DeathParticle: {fileID: 4236396496474588609, guid: 715ba0a801bc0554bb6d5ea90e357fc6, type: 3}

@@ -40,6 +40,11 @@ public class cameraMovement : MonoBehaviour
             transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
         }
 
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            GameObject.FindWithTag("UI").GetComponent<HUD>().Ready();
+        }
+
         //Move with mouse
 
         if (Input.mousePosition.x > Screen.width - edgeSize && transform.position.x <= 5)
